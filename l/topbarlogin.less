@@ -1,0 +1,180 @@
+@import url('./constant.less');
+@import url('./reset.less');
+@charset "utf-8";
+#layout-wrap-order{
+  float: right;
+  line-height: 36px;
+  font-size: 14px;
+  display: none;
+  position: relative;
+  z-index: 10000;
+}
+#html .layout-relative{position: relative;}
+#html .layout-fl{float: left;display: inline;}
+#html .layout-fr{float: right;display: inline;}
+#html .layout-of-hidden{overflow: hidden;}
+
+#html .layout-pt-a{padding-top: 10px;}
+#html .layout-pt-b{padding-top: 15px;}
+#html .layout-pt-c{padding-top: 20px;}
+
+#html .layout-mt-a{margin-top: 10px;}
+#html .layout-mt-b{margin-top: 20px;}
+#html .layout-mt-c{margin-top: 5px;}
+#html .layout-mt-d{margin-top: 30px;}
+#html .layout-mt-e{margin-top: -10px;}
+#html .layout-mt-f{margin-top: -2px;}
+
+#html .layout-mb-a{margin-bottom: 10px;}
+#html .layout-mb-b{margin-bottom: 20px;}
+#html .layout-mb-c{margin-bottom: 5px;}
+#html .layout-mb-d{margin-bottom: 30px;}
+#html .layout-mb-e{margin-bottom: 40px;}
+#html .layout-mb-f{margin-bottom: 15px;}
+#html .layout-mb-g{margin-bottom: 50px;}
+
+#html .layout-ml-a{margin-left:10px;}
+#html .layout-ml-b{margin-left:20px;}
+
+#html .layout-mr-a{margin-right:10px;}
+#html .layout-mr-b{margin-right:20px;}
+
+#html .layout-bt-a{border-top: 1px solid #ddd;}
+
+#html .layout-wrap-a{width:1000px;margin:0 auto;}
+#html .layout-wrap-b{width:630px;}
+#html .layout-wrap-c{width:350px;}
+#html .layout-wrap-d{width:680px;}
+#html .layout-wrap-e{width:300px;}
+.nav-b *,.outlogin_layerbox_bylx *,.outlogin_layerbox_bylx_anrrow *,.outlogin_layerbox_bylx,.outlogin_layerbox_bylx_anrrow{
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  -o-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.nav-b{ background: #fff; height:40px;font:12px/40px "Microsoft YaHei","微软雅黑","SimHei","黑体",sans-serif;text-align: center;min-width: 1000px;width: 1000px;margin: 0 auto; position: relative; display: block;}
+.nav-b-border{ 
+  // border-bottom:1px solid #D6D6D6;
+}
+.nav-b .logo{float: left;display: inline;width:120px;height: 30px;overflow: hidden;margin:5px 30px 0 10px;text-indent: -999px;}
+.nav-b .links li{margin: 0 10px 0 10px;float: left;display: inline;height: 40px;overflow: hidden;}
+.nav-b .links li.first{margin-left: 0;}
+.nav-b .ico-arrow{position: absolute;display: block; width:16px;height:8px;overflow: hidden;background: url(../i/topbarlogin/arrow_a.png) no-repeat 0 0;}
+.nav-b .ico-arrow{bottom: 0;}
+.nav-b .more a{font-size: 30px;position: relative;top:-9px;}
+.nav-b .links a:link{color:#777;text-decoration: none;}
+.nav-b .more a:link{color:#777;}
+.nav-b .more a.selected:link{color:#dd0000;}
+.nav-b .links a:visited{color:#777;text-decoration: none;}
+.nav-b .links a:hover, .nav-b .links a:active{color:#dd0000;text-decoration: none;}
+.nav-b .more a:visited{color:#777;text-decoration: none;}
+.nav-b .more a:hover, .nav-b .more a:active{color:#dd0000;text-decoration: none;cursor: default;}
+.nav-b .extra{position: absolute;right:0;top:0; height:40px;padding:0;}
+.nav-b .extra .TAP14-logined{ right: 65px;}
+.nav-b .more-layer{border:1px solid #E1DFDA;width:245px;z-index:1000;
+  -moz-box-shadow:0px 2px 5px rgba(76, 74, 68, 0.3);
+  -webkit-box-shadow:0px 2px 5px rgba(76, 74, 68, 0.3);
+  box-shadow:0px 2px 5px rgba(76, 74, 68, 0.3);
+  background: #fff;position: absolute;top:40px;}
+.nav-b .more-layer .ico-arrow{top:-8px;}
+.nav-b .more-layer ul{padding:5px 0 5px 3px;}
+.nav-b .more-layer li{float: left;display: inline; height:26px;line-height: 26px;vertical-align: top;}
+.nav-b .more-layer li a{display: block;padding:0 7px;}
+.nav-b .more-layer li a:link,.nav-b .more-layer li a:visited{color:#333;}
+.nav-b .more-layer li a:hover,.nav-b .more-layer li a:active{color:#dd0000;}
+
+
+/*sslogin*/
+.TAP14{float:left;height:40px;font-size:14px;font-weight:normal;font-size:12px; overflow:visible;*zoom:1;background:#fff;}
+.TAP14 .ac-icon{background-repeat:no-repeat;display:inline-block;*display:inline;*zoom:1; vertical-align:text-bottom;overflow:hidden;}
+.TAP14 .ac-icon-message{width:8px;height:8px;background-position:0 0;}
+.TAP14 .ac-icon-ar{display: none;}
+.TAP14 .ac-client-active .ac-icon-ar,
+.TAP14 .ac-active .ac-icon-ar{width:10px;height:6px;background-position:0 -28px;}
+/*客户端ico*/
+.TAP14 .ico-client{width:25px;height:25px;background-image:url(../i/topbarlogin/client.png);background-repeat:no-repeat;background-position:-999em -999em;}
+.TAP14 .ico-weibo{background-position:0 0;}
+.TAP14 .ico-news{background-position:0 -50px;}
+.TAP14 .ico-sports{background-position:0 -100px;}
+.TAP14 .ico-ent{background-position:0 -150px;}
+.TAP14 .ico-finance{background-position:0 -200px;}
+.TAP14 .ico-video{background-position:0 -250px;}
+.TAP14 .ico-games{background-position:0 -300px;}
+.TAP14 .ico-weather{background-position:0 -350px;}
+
+.TAP14 .ac-login{position:relative;right:0;top:0;*width:52px;height:40px;z-index:1000;overflow:visible;}
+.TAP14 div.ac-login-cnt{float:left;height:40px;font-size:12px;overflow:visible;padding:0 10px;}
+.TAP14 div.ac-login-cnt a{display:block;height:40px;zoom:1; cursor:pointer;}
+.TAP14 .ac-login .thumb{float:left;margin:4px 0 0 0;width:32px;height:32px;overflow:hidden;border-radius:16px;border:none;_display:inline;_zoom:1;}
+.TAP14 .ac-login .thumb img{display: none;}
+.TAP14 .ac-login .thumb{background: url(../i/topbarlogin/user_a.png) no-repeat  7px 8px;}
+.TAP14 .ac-login .ac-login-cnt:hover .thumb,.TAP14 .ac-login .active .thumb{background: url(../i/topbarlogin/user_a_h.png) no-repeat  7px 8px;}
+
+.TAP14 .ac-logined .ac-login-cnt a.thumb{left:0;float:left;width:32px;height:32px;overflow:hidden;border:none;_zoom:1;outline:none;}
+.TAP14 .ac-logined .thumb img{float:left;border:none;outline:none;display: block;}
+.TAP14 .ac-login .log-links{display: none;}
+.TAP14 .ac-login .ac-login-cnt  .ac-icon{border:2px solid #fff;border-radius: 50%;}
+/*登录*/
+/*.TAP14 .ac-logined .ac-active{width:78px;padding-left:16px;border-width:0 1px;border-style:solid;}*/
+.TAP14 .ac-logined .thumb{background: none !important;}
+.TAP14 .ac-logined .thumb img{width:32px;height:32px;outline:none;border:none;}
+.TAP14 .ac-logined .ac-icon-ar{position:absolute;right:21px;top:21px;}
+.TAP14 .ac-login-cnt .ac-icon-message{position:absolute;right:5px;top:4px;}
+
+/*下拉菜单*/
+.TAP14 .ac-dropdown-wrap{position:absolute;top:33px;left:-26px;width:78px;z-index:1000;}
+.TAP14 .ac-arrow{position: absolute;left:46px;top:0;display: block; width:16px;height:8px;overflow: hidden;background: url(../i/topbarlogin/arrow_a.png) no-repeat 0 0;}
+.TAP14 .ac-dropdown{margin-top:8px;border:1px solid #E1DFDA;
+  -moz-box-shadow:0px 2px 5px rgba(76, 74, 68, 0.3);
+  -webkit-box-shadow:0px 2px 5px rgba(76, 74, 68, 0.3);
+  box-shadow:0px 2px 5px rgba(76, 74, 68, 0.3);
+  background: #fff;
+  position: relative;top:-1px;
+}
+.TAP14 .ac-dropdown li{position:relative;vertical-align:top;text-align:left;height:30px;line-height:30px;overflow:hidden;}
+.TAP14 .ac-dropdown a{position:relative;display:block;height:30px;padding-left:10px;line-height:30px; word-break:break-all;overflow:hidden;font-size:12px;overflow:hidden;}
+
+.TAP14 .ac-dropdown a:hover{ text-decoration:none;}
+.TAP14 .ac-dropdown .ac-icon-message{position: absolute;right: 6px;top: 11px;}
+/*消息*/
+.TAP14 .ac-rgst{
+  position: absolute;
+  right: 50px;
+  top: 0;
+}
+.TAP14 .ac-rgst:hover a{color: #e96a0d;text-decoration: none;}
+.TAP14 .ac-rgst .msg-link {position:relative;display:block;width:50px;height:40px;padding-left:10px;text-align:left;line-height:40px; text-decoration:none;font-size:12px;}
+/*激活状态*/
+.TAP14 .ac-client-active .ac-client-tl{height:40px;}
+.TAP14 .ac-client-active .ac-client-tl a{background:#fff;border-width:0 1px;border-style:solid;}
+.TAP14 .ac-client-active .client-dropdown{display:block;}
+/*判断css是否加载完毕*/
+.TAP14 .css_check{visibility: hidden;height:0px;width:120px;}
+/*可定制内容*/
+/*icon*/
+.TAP14 .ac-icon{background-image:url(../i/topbarlogin/dot_c.png);}
+/*背景色*/
+.TAP14 .msg-lst li:hover,
+.TAP14 .ac-dropdown li a:hover{background:#EAEAEA;color:#dd0000;}
+.TAP14 .ac-dropdown li a:link,.TAP14 .ac-dropdown li a:visited{color:#333;}
+.TAP14 .ac-dropdown li a:hover,.TAP14 .ac-dropdown li a:active{color:#dd0000;}
+/*feed流提示*/
+.outlogin_layerbox_bylx .sina-top-bar-user-tip{width:452px;line-height: 40px !important; font-size: 12px !important;padding: 10px 0 0 25px;position: absolute;background: white;left: 0;right: 25px;overflow: hidden;}
+.outlogin_layerbox_bylx .sina-top-bar-user-tip span{color: #a87a2c;}
+/*ie6,ie7*/
+
+
+/*logo和我的订单*/ 
+.wrap1000{ width: 1000px; margin: 0 auto; position: relative;}
+#sina-top-bar-right {
+  float: right;
+  line-height: 36px;
+  font-size: 14px;
+}
+.sina-top-bar-logo{
+  float: left;
+  height: 36px;
+  width: 105px;
+  background: url(http://n0.sinaimg.cn/sports/lotteuro2016/pc/i/logo.png) no-repeat;
+}

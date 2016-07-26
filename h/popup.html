@@ -1,0 +1,63 @@
+  <!-- 弹出层 -->
+  <div id="mask"></div>
+  <!-- 支付-->
+  <div id="popup_layout_pay" class="popup_box">
+    <div class="popup_icon"></div>
+    <a href="javascript:;" class="popup_btn_close"></a>
+    <div class="popup_info">
+      <div class="popup_title">您的订单已提交成功，请尽快付款！</div>
+      <div class="popup_price">应付金额 <span class="popup_money">29元</span></div>
+      <div class="popup_tips">请在23小时内完成付款，付款成功后，您将看到本场比赛推荐~</div>
+    </div>
+    <div class="popup_operate">
+      <div class="popup_pay_box">
+        <a href="javascript:;" onclick="util.payment.openPage()" class="popup_btn_pay">立即支付</a>
+      </div>
+      <a href="javascript:;" class="popup_btn_cancel">取消</a>
+    </div>
+  </div>
+  <!-- 支付应该成功-->
+  <div id="popup_layout_canpay" class="popup_box">
+    <div class="popup_icon1"></div>
+    <a href="javascript:;" class="popup_btn_close"></a>
+    <div class="popup_info">
+      <div class="popup_title">请在新开的页面完成支付操作</div>
+      <div class="popup_price">应付金额 <span class="popup_money">29元</span></div>
+      <div class="popup_tips">付款完成前请不要刷新此窗口～</div>
+    </div>
+    <div class="popup_operate">
+      <div class="popup_pay_box">
+        <a href="javascript:;" class="popup_btn_canpay">我已支付成功</a>
+      </div>
+      <a href="http://ai.lottery.sina.com.cn/uc/order/index/?from=euro" class="popup_go_order">没有完成支付</a>
+    </div>
+  </div>
+  <!-- 未支付 -->
+  <div id="popup_layout_nopay" class="popup_box">
+    <div class="popup_icon"></div>
+    <a href="javascript:;" class="popup_btn_close"></a>
+    <div class="popup_info">
+      <div class="popup_title">抱歉！您的订单没有支付成功</div>
+      <div class="popup_price">应付金额 <span class="popup_money">29元</span></div>
+      <div class="popup_tips">请在比赛开始前完成付款，付款成功后，您将看到本场比赛推荐~</div>
+    </div>
+    <div class="popup_operate">
+      <div class="popup_pay_box">
+        <a href="javascript:;" onclick="util.payment.openPage()" class="popup_btn_pay">重新支付</a>
+      </div>
+      <a href="http://ai.lottery.sina.com.cn/uc/order/index/?from=euro" class="popup_go_order">查看订单</a>
+    </div>
+  </div>
+  <!-- 没有预测数据的提示 -->
+  <div id="popup_layout_msg" class="popup_box">
+    <div class="popup_icon"></div>
+    <a href="javascript:;" class="popup_btn_close"></a>
+    <div class="popup_info">
+      <div id="popup_msg"></div>
+    </div>
+    <div class="popup_operate">
+      <div class="popup_pay_box">
+        <a href="javascript:;" class="popup_btn_know">知道了</a>
+      </div>
+    </div>
+  </div>
