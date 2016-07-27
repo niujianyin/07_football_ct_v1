@@ -33,7 +33,7 @@
         <!--主队-->
         <div class="d_gs_hTableBox">
           <div class="d_gs_hTit">曼城[11]</div>
-          <table d_gs_h_table>
+          <table class="d_gs_h_table">
             <tr class="d_tr1st">
               <th class="d_td1st"></th>
               <th>场次</th>
@@ -85,9 +85,9 @@
           </table>
         </div>
         <!--客队-->
-        <div class="d_gs_GTableBox">
-          <div class="d_gs_GTit">曼城[11]</div>
-          <table d_gs_h_table>
+        <div class="d_gs_gTableBox">
+          <div class="d_gs_gTit">曼城[11]</div>
+          <table class="d_gs_g_table">
             <tr class="d_tr1st">
               <th class="d_td1st"></th>
               <th>场次</th>
@@ -165,34 +165,40 @@
             <div class="d_td_line clearfix">
               <div class="d_td_lineLeft">
                 <div class="d_td_lineGray"></div>
-                <div class="d_td_lineGreen">1.31</div>
+                <div class="d_td_lineTxt">1.31</div>
+                <div class="d_td_lineGreen" style="widht:10%"></div>
               </div>
               <div class="d_td_txt">平均进球</div>
               <div class="d_td_lineRight">
                 <div class="d_td_lineGray"></div>
-                <div class="d_td_lineGreen">1.31</div>
+                <div class="d_td_lineTxt">1.31</div>
+                <div class="d_td_lineGreen" style="widht:10%"></div>
               </div>
             </div>
             <div class="d_td_line clearfix">
               <div class="d_td_lineLeft">
                 <div class="d_td_lineGray"></div>
-                <div class="d_td_lineGreen">1.31</div>
+                <div class="d_td_lineTxt">1.31</div>
+                <div class="d_td_lineGreen" style="widht:10%"></div>
               </div>
-              <div class="d_td_txt">大小球比例</div>
+              <div class="d_td_txt">大球比例</div>
               <div class="d_td_lineRight">
                 <div class="d_td_lineGray"></div>
-                <div class="d_td_lineGreen">1.31</div>
+                <div class="d_td_lineTxt">1.31</div>
+                <div class="d_td_lineGreen" style="widht:10%"></div>
               </div>
             </div>
             <div class="d_td_line clearfix">
               <div class="d_td_lineLeft">
                 <div class="d_td_lineGray"></div>
-                <div class="d_td_lineGreen">1.31</div>
+                <div class="d_td_lineTxt">1.31</div>
+                <div class="d_td_lineGreen" style="widht:10%"></div>
               </div>
               <div class="d_td_txt">赢盘比例</div>
               <div class="d_td_lineRight">
                 <div class="d_td_lineGray"></div>
-                <div class="d_td_lineGreen">1.31</div>
+                <div class="d_td_lineTxt">1.31</div>
+                <div class="d_td_lineGreen" style="widht:10%"></div>
               </div>
             </div>
           </div>
@@ -204,7 +210,7 @@
       <div class="d_hv_Tit d_boxTit">
         <span class="d_boxTitTxt">历史交战记录</span>
       </div>
-      <div class="d_hv_chooseBox">
+      <div class="d_hv_chooseBox clearfix">
         <div class="d_hv_selectBox">
           近
           <select name="" id="d_hv_select">
@@ -212,7 +218,7 @@
             <option value="2">2</option>
           </select> 场
         </div>
-        <div class="d_hv_radioBox">
+        <div class="d_hv_radioBox clearfix">
           <div class="d_hv_radio1"><span class="d_radio d_radioStatus0"></span>全部</div>
           <div class="d_hv_radio1"><span class="d_radio d_radioStatus0"></span>英超</div>
           <div class="d_hv_radio1"><span class="d_radio d_radioStatus1"></span>英冠</div>
@@ -254,13 +260,200 @@
         </div>
       </div>
     </div>
-
+    <!-- 近期战绩 -->
+    <div class="d_recentScoreBox">
+      <div class="d_rs_Tit d_boxTit">
+        <span class="d_boxTitTxt">近期战绩</span>
+      </div>
+      <div class="d_rs_content clearfix">
+        <div class="d_rs_hBox">
+          <div class="d_rs_chooseBox">
+            <div class="d_rs_selectBox">
+              <span>法国</span>近期战绩
+              <select id="d_rs_hSelect">
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>场
+            </div>
+            <div class="d_rs_tabBox">
+              <ul class="d_rs_hTab clearfix">
+                <li class="d_rs_tabCurrent">总</li>
+                <li>主</li>
+                <li>客</li>
+              </ul>
+            </div>
+            <div class="d_rs_radioBox clearfix ">
+              <div class="d_rs_radio"><span class="d_radio d_radioStatus1"></span>英超</div>
+              <div class="d_rs_radio"><span class="d_radio d_radioStatus0"></span>英超1</div>
+              <div class="d_rs_radio"><span class="d_radio d_radioStatus0"></span>英超2</div>
+            </div>
+          </div>
+          <div class="d_rs_table d_rs_hTable">
+            <table>
+              <tr class="d_l3_dataHead">
+                <th>赛事</th>
+                <th class="d_l3_dataTime">日期</th>
+                <th class="d_l3_dataVs">对阵</th>
+                <th>盘口</th>
+                <th>胜负</th>
+                <th>盘路</th>
+                <th>大小</th>
+              </tr>
+              <tr>
+                <td>英超</td>
+                <td>2016-07-11</td>
+                <td>法国&nbsp;0-3&nbsp;不丹</td>
+                <td>盘口</td>
+                <td>胜</td>
+                <td>盘路</td>
+                <td>大小</td>
+              </tr>
+            </table>
+          </div>
+          <div class="d_rs_canvasBox">
+            <div class="d_rs_canvasHead">
+              <span>主队</span>近10场比赛
+              <span class="d_redFont">4</span>
+              胜
+              <span class="d_redFont">4</span>
+              平
+              <span class="d_redFont">4</span>
+              负，赢盘率
+              <span class="d_redFont">40%</span>
+            </div>
+            <div class="d_rs_hCanvas d_rs_canvas"></div>
+            <div class="d_rs_canvasLabel"></div>
+            <div class="d_rs_canvasPersent"></div>
+          </div>
+        </div>
+        <div class="d_rs_gBox">
+          <div class="d_rs_chooseBox">
+            <div class="d_rs_selectBox">
+              <span>法国</span>近期战绩
+              <select id="d_rs_gSelect">
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>场
+            </div>
+            <div class="d_rs_tabBox">
+              <ul class="d_rs_gTab clearfix">
+                <li class="d_rs_tabCurrent">总</li>
+                <li>主</li>
+                <li>客</li>
+              </ul>
+            </div>
+            <div class="d_rs_radioBox clearfix">
+              <div class="d_rs_radio"><span class="d_radio d_radioStatus1"></span>英超</div>
+              <div class="d_rs_radio"><span class="d_radio d_radioStatus0"></span>英超1</div>
+              <div class="d_rs_radio"><span class="d_radio d_radioStatus0"></span>英超2</div>
+            </div>
+          </div>
+          <div class="d_rs_table d_rs_gTable">
+            <table>
+              <tr class="d_l3_dataHead">
+                <th>赛事</th>
+                <th class="d_l3_dataTime">日期</th>
+                <th class="d_l3_dataVs">对阵</th>
+                <th>盘口</th>
+                <th>胜负</th>
+                <th>盘路</th>
+                <th>大小</th>
+              </tr>
+              <tr>
+                <td>英超</td>
+                <td>2016-07-11</td>
+                <td>法国&nbsp;0-3&nbsp;不丹</td>
+                <td>盘口</td>
+                <td>胜</td>
+                <td>盘路</td>
+                <td>大小</td>
+              </tr>
+            </table>
+          </div>
+          <div class="d_rs_canvasBox">
+            <div class="d_rs_canvasHead">
+              <span>主队</span>近10场比赛
+              <span class="d_redFont">4</span>
+              胜
+              <span class="d_redFont">4</span>
+              平
+              <span class="d_redFont">4</span>
+              负，赢盘率
+              <span class="d_redFont">40%</span>
+            </div>
+            <div class="d_rs_gCanvas d_rs_canvas"></div>
+            <div class="d_rs_canvasLabel"></div>
+            <div class="d_rs_canvasPersent"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 未来赛事 -->
+    <div class="d_futureGameBox">
+      <div class="d_fg_Tit d_boxTit">
+        <span class="d_boxTitTxt">未来赛事</span>
+      </div>
+      <div class="d_fg_content clearfix">
+        <div class="d_fg_hBox">
+          <table>
+            <tr>
+              <th>赛事</th>
+              <th class="d_l3_dataTime">日期</th>
+              <th class="d_l3_dataVs">对阵</th>
+              <th>相隔</th>
+            </tr>
+            <tr>
+              <td>英超</td>
+              <td>2016-07-11</td>
+              <td>中国&nbsp;vs&nbsp;中国香港</td>
+              <td>1天</td>
+            </tr>
+          </table>
+        </div>
+        <div class="d_fg_gBox">
+          <table>
+            <tr>
+              <th>赛事</th>
+              <th class="d_l3_dataTime">日期</th>
+              <th class="d_l3_dataVs">对阵</th>
+              <th>相隔</th>
+            </tr>
+            <tr>
+              <td>英超</td>
+              <td>2016-07-11</td>
+              <td>中国&nbsp;vs&nbsp;中国香港</td>
+              <td>1天</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- 相关新闻 -->
+    <div class="d_aboutNewsBox">
+       <div class="d_an_Tit d_boxTit">
+        <span class="d_boxTitTxt">相关新闻</span>
+      </div>
+      <div class="d_an_content clearfix">
+        <div class="d_an_hBox">
+          <div class="d_an_header">法国</div>
+          <div class="d_an_lineBox">
+          <div class="d_an_line"><span>●&nbsp;</span>G3数据大爆发无法令格林满足:我们会取胜裁判棒极了汤普森揽锅</div>
+          </div>
+        </div>
+         <div class="d_an_gBox">
+          <div class="d_an_header">德国</div>
+          <div class="d_an_lineBox">
+          <div class="d_an_line"><span>●&nbsp;</span>G3数据大爆发无法令格林满足:我们会取胜裁判棒极了汤普森揽锅</div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
   </div>
   <!--内容主体 end-->
-    <!-- 弹出层 html start -->
+  <!-- 弹出层 html start -->
   <link rel="import" href="h/popup.html?__inline">
   <!-- 弹出层 html end -->
-  
   <!-- 底部 html start -->
   <link rel="import" href="h/footer.html?__inline">
   <!-- 底部 html end -->
