@@ -6,22 +6,20 @@
   <link rel="import" href="h/commonHead.html?__inline">
   <link rel="stylesheet" href="l/common.less" type="text/css" media="screen" />
   <link rel="stylesheet" href="l/index.less" type="text/css" media="screen" />
-  <link rel="stylesheet" href="l/details.less" type="text/css" media="screen">
+  <!--<link rel="stylesheet" href="l/details.less" type="text/css" media="screen">-->
+  <link rel="stylesheet" href="l/watchData.less" type="text/css" media="screen">
 </head>
 
 <body>
   <!-- 头部 html start -->
   <!--  lb__link-->
+  <link rel="import" href="h/top.html?__inline">
   <link rel="import" href="h/headerData.html?__inline">
   <!--  lb__link-->
-  <script src="./j/lib/jquery-1.11.1.min.js"></script>
   <!--[if lte IE 9]>
 <script src="./j/lib/respond.min.js"></script>
 <script src="./j/lib/html5shiv.min.js"></script>
 <![endif]-->
-  <!-- 登录组件js -->
-  <script type="text/javascript" src="./j/lib/lib_top.js"></script>
-  <script type="text/javascript" src="./j/sinaLogin.js"></script>
   <!-- 头部 html end -->
   <!--内容主体-->
   <div class="d_main wrap">
@@ -212,8 +210,7 @@
           <select name="" id="d_hv_select">
             <option value="1">1</option>
             <option value="2">2</option>
-          </select>
-          场
+          </select> 场
         </div>
         <div class="d_hv_radioBox">
           <div class="d_hv_radio1"><span class="d_radio d_radioStatus0"></span>全部</div>
@@ -225,15 +222,15 @@
         <div class="d_hv_tableBox">
           <table>
             <tr>
-             <th>类型</th>
-            <th>日期</th>
-            <th>主场</th>
-            <th>盘口</th>
-            <th>客场</th>
-            <th>比分</th>
-            <th>胜负</th>
-            <th>盘路</th>
-            <th>大小</th>
+              <th>类型</th>
+              <th>日期</th>
+              <th>主场</th>
+              <th>盘口</th>
+              <th>客场</th>
+              <th>比分</th>
+              <th>胜负</th>
+              <th>盘路</th>
+              <th>大小</th>
             </tr>
             <tr>
               <td>英超</td>
@@ -251,16 +248,27 @@
             双方近<em class="d_blueFont">1</em>次交战，
             <em class="d_redFont">1</em>胜
             <em class="d_redFont">1</em>平
-            <em class="d_redFont">1</em>负，
-           进 <em class="d_redFont">3</em>球，
-           失<em class="d_redFont">3</em>球，
-           硬盘率 <em class="d_redFont">0%</em>      
+            <em class="d_redFont">1</em>负， 进 <em class="d_redFont">3</em>球， 失
+            <em class="d_redFont">3</em>球， 硬盘率 <em class="d_redFont">0%</em>
           </div>
         </div>
       </div>
     </div>
+
   </div>
   <!--内容主体 end-->
+    <!-- 弹出层 html start -->
+  <link rel="import" href="h/popup.html?__inline">
+  <!-- 弹出层 html end -->
+  
+  <!-- 底部 html start -->
+  <link rel="import" href="h/footer.html?__inline">
+  <!-- 底部 html end -->
 </body>
+<script src="./j/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="./j/lib/lib_top.js"></script>
+<script type="text/javascript" src="./j/sinaLogin.js"></script>
+<script type="text/javascript" src="./j/lib/template.js"></script>
+<script type="text/javascript" src="./j/lib/echarts.min.js"></script>
 
 </html>
