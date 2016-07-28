@@ -158,8 +158,8 @@
           <div class="d_td_info">
             共100场比赛
             <span>20胜</span>
-            <span>50负</span>
             <span>30平</span>
+            <span>50负</span>
           </div>
           <div class="d_td_lineBox">
             <div class="d_td_line clearfix">
@@ -211,53 +211,61 @@
         <span class="d_boxTitTxt">历史交战记录</span>
       </div>
       <div class="d_hv_chooseBox clearfix">
-        <div class="d_hv_selectBox">
-          近
-          <select name="" id="d_hv_select">
-            <option value="1">1</option>
-            <option value="2">2</option>
+        <script id="d_temp_historyVsChoose" type="text/html">
+          <div class="d_hv_selectBox">
+            近
+            <select name="" id="d_hv_select">
+            {{each data as v i}}
+            <option value="{{data.length-i}}" {{data.ifChecked}}>{{data.length-i}}</option>
+           {{/each}}
           </select> 场
-        </div>
-        <div class="d_hv_radioBox clearfix">
-          <div class="d_hv_radio1"><span class="d_radio d_radioStatus0"></span>全部</div>
-          <div class="d_hv_radio1"><span class="d_radio d_radioStatus0"></span>英超</div>
-          <div class="d_hv_radio1"><span class="d_radio d_radioStatus1"></span>英冠</div>
-        </div>
+          </div>
+          <div class="d_hv_radioBox clearfix">
+            <div class="d_hv_radio1"><span class="d_radio d_radioStatus1" value="全部"></span>全部</div>
+            {{each leagues as v i}}
+            <div class="d_hv_radio1"><span class="d_radio d_radioStatus0" value="{{v}}"></span>{{v}}</div>
+            {{/each}}
+          </div>
+        </script>
       </div>
       <div class="d_hv_content">
-        <div class="d_hv_tableBox">
-          <table>
-            <tr>
-              <th>类型</th>
-              <th>日期</th>
-              <th>主场</th>
-              <th>盘口</th>
-              <th>客场</th>
-              <th>比分</th>
-              <th>胜负</th>
-              <th>盘路</th>
-              <th>大小</th>
-            </tr>
-            <tr>
-              <td>英超</td>
-              <td>2016-07-11</td>
-              <td>法国</td>
-              <td>受让半球</td>
-              <td>德国</td>
-              <td class="d_redFont">0-1</td>
-              <td class="d_redFont">胜</td>
-              <td>赢</td>
-              <td class="d_redFont">小</td>
-            </tr>
-          </table>
-          <div class="d_hv_explain">
-            双方近<em class="d_blueFont">1</em>次交战，
-            <em class="d_redFont">1</em>胜
-            <em class="d_redFont">1</em>平
-            <em class="d_redFont">1</em>负， 进 <em class="d_redFont">3</em>球， 失
-            <em class="d_redFont">3</em>球， 硬盘率 <em class="d_redFont">0%</em>
+        <script id="d_temp_historyVs" type="text/html">
+          <div class="d_hv_tableBox">
+            <table>
+              <tr>
+                <th>类型</th>
+                <th>日期</th>
+                <th>主场</th>
+                <th>盘口</th>
+                <th>客场</th>
+                <th>比分</th>
+                <th>胜负</th>
+                <th>盘路</th>
+                <th>大小</th>
+              </tr>
+              {{each viewData as v i}}
+              <tr>
+                <td style="background:{{leagues_color[v.LeagueType]}};color:#fff;">{{v.LeagueType_cn}}</td>
+                <td>{{v.date}}</td>
+                <td>{{v.Team1}}</td>
+                <td>{{v.pankou}}</td>
+                <td>{{v.Team2}}</td>
+                <td class="d_redFont">{{v.Score1}}-{{v.Score2}}</td>
+                <td class="d_redFont">{{v.win_lose}}</td>
+                <td>{{v.panlu}}</td>
+                <td class="d_redFont">{{v.big_small}}</td>
+              </tr>
+              {{/each}}
+            </table>
+            <div class="d_hv_explain">
+              双方近<em class="d_blueFont">{{viewData.length}}</em>次交战，
+              <em class="d_redFont">{{Team1Win}}</em>胜
+              <em class="d_redFont">{{Team1Draw}}</em>平
+              <em class="d_redFont">{{Team1Lose}}</em>负， 进 <em class="d_redFont">{{Team1Goal}}</em>球， 失
+              <em class="d_redFont">{{Team1Lose}}</em>球， 赢盘率 <em class="d_redFont">{{panlu_percent}}%</em>
+            </div>
           </div>
-        </div>
+        </script>
       </div>
     </div>
     <!-- 近期战绩 -->
@@ -267,123 +275,141 @@
       </div>
       <div class="d_rs_content clearfix">
         <div class="d_rs_hBox">
-          <div class="d_rs_chooseBox">
-            <div class="d_rs_selectBox">
-              <span>法国</span>近期战绩
-              <select id="d_rs_hSelect">
-                <option value="1">1</option>
-                <option value="2">2</option>
+          <div class="d_rs_chooseBox" id="d_rs_chooseBoxH">
+            <script id="temp_HnearVsChoose" type="text/html">
+              <div class="d_rs_selectBox">
+                <span>{{Team1}}</span>近期战绩
+                <select id="d_rs_hSelect">
+                {{each data as v i}}
+                <option value="{{data.length-i}}">{{data.length-i}}</option>
+                {{/each}}            
               </select>场
-            </div>
-            <div class="d_rs_tabBox">
-              <ul class="d_rs_hTab clearfix">
-                <li class="d_rs_tabCurrent">总</li>
-                <li>主</li>
-                <li>客</li>
-              </ul>
-            </div>
-            <div class="d_rs_radioBox clearfix ">
-              <div class="d_rs_radio"><span class="d_radio d_radioStatus1"></span>英超</div>
-              <div class="d_rs_radio"><span class="d_radio d_radioStatus0"></span>英超1</div>
-              <div class="d_rs_radio"><span class="d_radio d_radioStatus0"></span>英超2</div>
-            </div>
+              </div>
+              <div class="d_rs_tabBox">
+                <ul class="d_rs_hTab clearfix">
+                  <li class="d_rs_tabCurrent">总</li>
+                  <li>主</li>
+                  <li>客</li>
+                </ul>
+              </div>
+              <div class="d_rs_radioBox clearfix ">
+                <div class="d_rs_radio"><span class="d_radio d_radioStatus1" value="全部"></span>全部</div>
+                {{each leagues as v i}}
+                <div class="d_rs_radio"><span class="d_radio d_radioStatus0" value="{{v}}"></span>{{v}}</div>
+                {{/each}}
+              </div>
+            </script>
           </div>
           <div class="d_rs_table d_rs_hTable">
-            <table>
-              <tr class="d_l3_dataHead">
-                <th>赛事</th>
-                <th class="d_l3_dataTime">日期</th>
-                <th class="d_l3_dataVs">对阵</th>
-                <th>盘口</th>
-                <th>胜负</th>
-                <th>盘路</th>
-                <th>大小</th>
-              </tr>
-              <tr>
-                <td>英超</td>
-                <td>2016-07-11</td>
-                <td>法国&nbsp;0-3&nbsp;不丹</td>
-                <td>盘口</td>
-                <td>胜</td>
-                <td>盘路</td>
-                <td>大小</td>
-              </tr>
-            </table>
+            <script id="temp_HnearVs" type="text/html">
+              <table>
+                <tr class="d_l3_dataHead">
+                  <th>赛事</th>
+                  <th class="d_l3_dataTime">日期</th>
+                  <th class="d_l3_dataVs">对阵</th>
+                  <th>盘口</th>
+                  <th>胜负</th>
+                  <th>盘路</th>
+                  <th>大小</th>
+                </tr>
+                {{each data as v i}}
+                <tr>
+                  <td style="background:{{leagues_color[v.LeagueType]}};color:#fff;">{{v.LeagueType_cn}}</td>
+                  <td>{{v.date}}</td>
+                  <td>{{v.Team1}}&nbsp;{{v.Score1}}-{{v.Score2}}&nbsp;{{v.Team2}}</td>
+                  <td>{{v.pankou}}</td>
+                  <td>{{v.win_lose}}</td>
+                  <td>{{v.panlu}}</td>
+                  <td>{{v.big_small}}</td>
+                </tr>
+                {{/each}}
+              </table>
+            </script>
           </div>
-          <div class="d_rs_canvasBox">
-            <div class="d_rs_canvasHead">
-              <span>主队</span>近10场比赛
-              <span class="d_redFont">4</span>
-              胜
-              <span class="d_redFont">4</span>
-              平
-              <span class="d_redFont">4</span>
-              负，赢盘率
-              <span class="d_redFont">40%</span>
-            </div>
-            <div class="d_rs_hCanvas d_rs_canvas"></div>
-            <div class="d_rs_canvasLabel"></div>
-            <div class="d_rs_canvasPersent"></div>
+          <div class="d_rs_canvasBox" id="d_rs_canvasBoxH">
+            <script id="temp_HnearVsCanvas" type="text/html">
+              <div class="d_rs_canvasHead">
+                <span>{{Team1}}</span>近{{data.length}}场比赛
+                <span class="d_redFont">{{Team1Win}}</span> 胜
+                <span class="d_redFont">{{Team1Draw}}</span> 平
+                <span class="d_redFont">{{Team1Lose}}</span> 负，赢盘率
+                <span class="d_redFont">{{win_percent}}%</span>
+              </div>
+              <div class="d_rs_hCanvas d_rs_canvas"></div>
+              <div class="d_rs_canvasLabel">
+                胜率{{win_percent}}％ &nbsp; {{data | wordList}}
+              </div>
+              <div class="d_rs_canvasPersent">{{win_percent}} <span>%</span></div>
+            </script>
           </div>
         </div>
         <div class="d_rs_gBox">
-          <div class="d_rs_chooseBox">
-            <div class="d_rs_selectBox">
-              <span>法国</span>近期战绩
-              <select id="d_rs_gSelect">
-                <option value="1">1</option>
-                <option value="2">2</option>
+          <div class="d_rs_chooseBox" id="d_rs_chooseBoxG">
+            <script id="temp_GnearVsChoose" type="text/html">
+              <div class="d_rs_selectBox">
+                <span>{{Team1}}</span>近期战绩
+                <select id="d_rs_gSelect">
+                {{each data as v i}}
+                <option value="{{data.length-i}}">{{data.length-i}}</option>
+                {{/each}}            
               </select>场
-            </div>
-            <div class="d_rs_tabBox">
-              <ul class="d_rs_gTab clearfix">
-                <li class="d_rs_tabCurrent">总</li>
-                <li>主</li>
-                <li>客</li>
-              </ul>
-            </div>
-            <div class="d_rs_radioBox clearfix">
-              <div class="d_rs_radio"><span class="d_radio d_radioStatus1"></span>英超</div>
-              <div class="d_rs_radio"><span class="d_radio d_radioStatus0"></span>英超1</div>
-              <div class="d_rs_radio"><span class="d_radio d_radioStatus0"></span>英超2</div>
-            </div>
+              </div>
+              <div class="d_rs_tabBox">
+                <ul class="d_rs_gTab clearfix">
+                  <li class="d_rs_tabCurrent">总</li>
+                  <li>主</li>
+                  <li>客</li>
+                </ul>
+              </div>
+              <div class="d_rs_radioBox clearfix ">
+                <div class="d_rs_radio"><span class="d_radio d_radioStatus1" value="全部"></span>全部</div>
+                {{each leagues as v i}}
+                <div class="d_rs_radio"><span class="d_radio d_radioStatus0" value="{{v}}"></span>{{v}}</div>
+                {{/each}}
+              </div>
+            </script>
           </div>
           <div class="d_rs_table d_rs_gTable">
-            <table>
-              <tr class="d_l3_dataHead">
-                <th>赛事</th>
-                <th class="d_l3_dataTime">日期</th>
-                <th class="d_l3_dataVs">对阵</th>
-                <th>盘口</th>
-                <th>胜负</th>
-                <th>盘路</th>
-                <th>大小</th>
-              </tr>
-              <tr>
-                <td>英超</td>
-                <td>2016-07-11</td>
-                <td>法国&nbsp;0-3&nbsp;不丹</td>
-                <td>盘口</td>
-                <td>胜</td>
-                <td>盘路</td>
-                <td>大小</td>
-              </tr>
-            </table>
+            <script id="temp_GnearVs" type="text/html">
+              <table>
+                <tr class="d_l3_dataHead">
+                  <th>赛事</th>
+                  <th class="d_l3_dataTime">日期</th>
+                  <th class="d_l3_dataVs">对阵</th>
+                  <th>盘口</th>
+                  <th>胜负</th>
+                  <th>盘路</th>
+                  <th>大小</th>
+                </tr>
+                {{each data as v i}}
+                <tr>
+                  <td style="background:{{leagues_color[v.LeagueType]}};color:#fff;">{{v.LeagueType_cn}}</td>
+                  <td>{{v.date}}</td>
+                  <td>{{v.Team1}}&nbsp;{{v.Score1}}-{{v.Score2}}&nbsp;{{v.Team2}}</td>
+                  <td>{{v.pankou}}</td>
+                  <td>{{v.win_lose}}</td>
+                  <td>{{v.panlu}}</td>
+                  <td>{{v.big_small}}</td>
+                </tr>
+                {{/each}}
+              </table>
+            </script>
           </div>
-          <div class="d_rs_canvasBox">
-            <div class="d_rs_canvasHead">
-              <span>主队</span>近10场比赛
-              <span class="d_redFont">4</span>
-              胜
-              <span class="d_redFont">4</span>
-              平
-              <span class="d_redFont">4</span>
-              负，赢盘率
-              <span class="d_redFont">40%</span>
-            </div>
-            <div class="d_rs_gCanvas d_rs_canvas"></div>
-            <div class="d_rs_canvasLabel"></div>
-            <div class="d_rs_canvasPersent"></div>
+          <div class="d_rs_canvasBox" id="d_rs_canvasBoxG">
+            <script id="temp_GnearVsCanvas" type="text/html">
+              <div class="d_rs_canvasHead">
+                <span>{{Team1}}</span>近{{data.length}}场比赛
+                <span class="d_redFont">{{Team1Win}}</span> 胜
+                <span class="d_redFont">{{Team1Draw}}</span> 平
+                <span class="d_redFont">{{Team1Lose}}</span> 负，赢盘率
+                <span class="d_redFont">{{win_percent}}%</span>
+              </div>
+              <div class="d_rs_gCanvas d_rs_canvas"></div>
+              <div class="d_rs_canvasLabel">
+                胜率{{win_percent}}％ &nbsp; {{data | wordList}}
+              </div>
+              <div class="d_rs_canvasPersent">{{win_percent}} <span>%</span></div>
+            </script>
           </div>
         </div>
       </div>
@@ -395,60 +421,76 @@
       </div>
       <div class="d_fg_content clearfix">
         <div class="d_fg_hBox">
-          <table>
-            <tr>
-              <th>赛事</th>
-              <th class="d_l3_dataTime">日期</th>
-              <th class="d_l3_dataVs">对阵</th>
-              <th>相隔</th>
-            </tr>
-            <tr>
-              <td>英超</td>
-              <td>2016-07-11</td>
-              <td>中国&nbsp;vs&nbsp;中国香港</td>
-              <td>1天</td>
-            </tr>
-          </table>
+          <script id="temp_Hfuture" type="text/html">
+            <table>
+              <tr>
+                <th>赛事</th>
+                <th class="d_l3_dataTime">日期</th>
+                <th class="d_l3_dataVs">对阵</th>
+                <th>相隔</th>
+              </tr>
+              {{each data as value index}}
+              <tr>
+                <td class="" style="">{{value.LeagueType_cn}}</td>
+                <td class="">{{value.date}}</td>
+                <td class="">{{value.Team1}}{{value.Score1}}-{{value.Score2}}{{value.Team2}}</td>
+                <th>{{value.date | distance}}天</th>
+              </tr>
+              {{/each}}
+            </table>
+          </script>
         </div>
         <div class="d_fg_gBox">
-          <table>
-            <tr>
-              <th>赛事</th>
-              <th class="d_l3_dataTime">日期</th>
-              <th class="d_l3_dataVs">对阵</th>
-              <th>相隔</th>
-            </tr>
-            <tr>
-              <td>英超</td>
-              <td>2016-07-11</td>
-              <td>中国&nbsp;vs&nbsp;中国香港</td>
-              <td>1天</td>
-            </tr>
-          </table>
+          <script id="temp_Gfuture" type="text/html">
+            <table>
+              <tr>
+                <th>赛事</th>
+                <th class="d_l3_dataTime">日期</th>
+                <th class="d_l3_dataVs">对阵</th>
+                <th>相隔</th>
+              </tr>
+              {{each data as value index}}
+              <tr>
+                <td class="" style="">{{value.LeagueType_cn}}</td>
+                <td class="">{{value.date}}</td>
+                <td class="">{{value.Team1}}{{value.Score1}}-{{value.Score2}}{{value.Team2}}</td>
+                <th>{{value.date | distance}}天</th>
+              </tr>
+              {{/each}}
+            </table>
+          </script>
         </div>
       </div>
     </div>
     <!-- 相关新闻 -->
     <div class="d_aboutNewsBox">
-       <div class="d_an_Tit d_boxTit">
+      <div class="d_an_Tit d_boxTit">
         <span class="d_boxTitTxt">相关新闻</span>
       </div>
       <div class="d_an_content clearfix">
         <div class="d_an_hBox">
-          <div class="d_an_header">法国</div>
-          <div class="d_an_lineBox">
-          <div class="d_an_line"><span>●&nbsp;</span>G3数据大爆发无法令格林满足:我们会取胜裁判棒极了汤普森揽锅</div>
-          </div>
+          <script id="temp_newsHome" type="text/html">
+            <div class="d_an_header">{{teamName}}</div>
+            <div class="d_an_lineBox">
+              {{each data as value index}}
+              <div class="d_an_line"><span>●&nbsp;</span><a href="{{value.url}}">{{value.title}}</a></div>
+              {{/each}}
+            </div>
+          </script>
         </div>
-         <div class="d_an_gBox">
-          <div class="d_an_header">德国</div>
-          <div class="d_an_lineBox">
-          <div class="d_an_line"><span>●&nbsp;</span>G3数据大爆发无法令格林满足:我们会取胜裁判棒极了汤普森揽锅</div>
-          </div>
-        </div>
+        <div class="d_an_gBox">
+          <script id="temp_newsGuest" type="text/html">
+            <div class="d_an_header">{{teamName}}</div>
+            <div class="d_an_lineBox">
+              {{each data as value index}}
+              <div class="d_an_line"><span>●&nbsp;</span><a href="{{value.url}}">{{value.title}}</a></div>
+              {{ /each}}
+            </div>
+          </script>
         </div>
       </div>
     </div>
+  </div>
   </div>
   <!--内容主体 end-->
   <!-- 弹出层 html start -->
@@ -463,5 +505,6 @@
 <script type="text/javascript" src="./j/sinaLogin.js"></script>
 <script type="text/javascript" src="./j/lib/template.js"></script>
 <script type="text/javascript" src="./j/lib/echarts.min.js"></script>
+<script type="text/javascript" src="./j/watchData.js"></script>
 
 </html>

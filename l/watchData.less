@@ -4,7 +4,7 @@
 @redFont: #e04f5c;
 @blueFont: #2a6ed7;
 @greenFont: #2cb759;
-@grayFont: #dbdee2;
+@grayFont: #c7c7ce;
 @darkGreen: #055023;
 @nomalGreen: #0ca943;
 @greenBlue: #60daad;
@@ -55,6 +55,10 @@
   }
 }
 
+.d_navBox li a {
+  color: #fff;
+}
+
 .d_navBg {
   float: right;
   width: 50%;
@@ -75,31 +79,21 @@
   margin-top: 30px;
 }
 
-.d_h_infoBox,
-.d_gameInfoBox,
-.d_g_infoBox {
+.d_h_infoBox, .d_gameInfoBox, .d_g_infoBox {
   width: 333px;
   float: left;
   text-align: center;
 }
 
-.d_h_logo,
-.d_g_logo {}
+.d_h_logo, .d_g_logo {}
 
-.d_h_name,
-.d_g_name,
-.d_score {
+.d_h_name, .d_g_name, .d_score {
   line-height: 28px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bolder;
 }
 
-.d_score {
-  display: none;
-}
-
-.d_h_eName,
-.d_g_eName {
+.d_h_eName, .d_g_eName {
   line-height: 22px;
   font-size: 12px;
   text-align: center;
@@ -111,8 +105,7 @@
   line-height: 54px;
 }
 
-.d_gameTime,
-.d_timeCount {
+.d_gameTime, .d_timeCount {
   font-size: 14px;
   line-height: 28px;
 }
@@ -125,9 +118,7 @@
   margin-top: 22px;
 }
 
-.d_pay_rqBox,
-.d_pay_spfBox,
-.d_pay_dxBox {
+.d_pay_rqBox, .d_pay_spfBox, .d_pay_dxBox {
   float: left;
   width: 333px;
   text-align: center;
@@ -247,29 +238,30 @@
 }
 
 .d_pageTab a {
-  color: @darkGreen;
+  color: #313336;
 }
 
 .d_tabCurrent {
-  background-image: url(../i/gameData/bg_nav2.png);
-  background-repeat: no-repeat;
-  background-position: center;
+  // background-image: url(../i/gameData/bg_nav2.png);
+  // background-repeat: no-repeat;
+  // background-position: center;
 }
 
 .d_tabCurrent a {
-  color: #fff;
+  // color: #fff;
+  display: inline-block;
+  line-height: 40px;
+  border-bottom: 4px solid #0ba13c;
 }
 
 // 内容主体
-.d_lineHeader,
-.d_boxTit {
+.d_lineHeader, .d_boxTit {
   line-height: 48px;
   font-size: 18px;
   font-weight: bolder;
 }
 
-.d_lineHeader span,
-.d_boxTitTxt {
+.d_lineHeader span, .d_boxTitTxt {
   border-left: 10px solid @nomalGreen;
   padding-left: 20px;
 }
@@ -292,8 +284,7 @@
   border-top: 1px solid @grayBorder;
 }
 
-.d_gs_hTableBox,
-.d_gs_gTableBox {
+.d_gs_hTableBox, .d_gs_gTableBox {
   float: left;
   width: 499px;
   text-align: center;
@@ -303,21 +294,18 @@
   border-left: 1px solid @grayBorder;
 }
 
-.d_gs_hTit,
-.d_gs_gTit {
+.d_gs_hTit, .d_gs_gTit {
   font-size: 12px;
   font-weight: bolder;
   line-height: 34px;
 }
 
-.d_gs_h_table,
-.d_gs_g_table {
+.d_gs_h_table, .d_gs_g_table {
   width: 100%;
   line-height: 34px;
 }
 
-.d_main td,
-.d_main th {
+.d_main td, .d_main th {
   vertical-align: center;
   text-align: center;
 }
@@ -337,8 +325,7 @@
   border: 1px solid @grayBorder;
 }
 
-.d_teamPoweVsBox,
-.d_totalDataBox {
+.d_teamPoweVsBox, .d_totalDataBox {
   float: left;
   width: 499px;
   height: 350px;
@@ -346,6 +333,10 @@
 
 .d_teamPoweVsBox {
   border-right: 1px solid @grayBorder;
+}
+
+.d_tpv_content {
+  height: 312px;
 }
 
 // 综合统计
@@ -395,7 +386,7 @@
 
 .d_td_lineGray {
   width: 100%;
-  background-color: @grayFont;
+  background-color: #ececf0;
   height: 20px;
   border-radius: 20px;
   color: #fff;
@@ -462,6 +453,10 @@
   float: left;
 }
 
+.d_hv_radio1 {
+  cursor: pointer;
+}
+
 .d_radio {
   display: inline-block;
   width: 12px;
@@ -470,11 +465,10 @@
   margin-right: 4px;
   margin-left: 12px;
   // background-position: center;
-}
-
-.d_radioStatus0 {
   background-image: url(../i/gameData/btn_radio0.png);
 }
+
+.d_radioStatus0 {}
 
 .d_radioStatus1 {
   background-image: url(../i/gameData/btn_radio1.png);
@@ -502,132 +496,180 @@
   padding-left: 20px;
   border-top: 1px dotted #ebebeb;
 }
+
 // 近期战绩
-.d_recentScoreBox{
-	margin-top: 26px;
-	border:1px solid @grayBorder;
+.d_recentScoreBox {
+  margin-top: 26px;
+  border: 1px solid @grayBorder;
 }
-.d_rs_content{
-	border-top: 1px solid @grayBorder;
+
+.d_rs_content {
+  border-top: 1px solid @grayBorder;
 }
-.d_rs_hBox,.d_rs_gBox{
-	float: left;
-	width: 499px;
+
+.d_rs_hBox, .d_rs_gBox {
+  float: left;
+  width: 499px;
 }
-.d_rs_chooseBox{
-	padding:10px 20px;
-	font-size: 14px;
+
+.d_rs_chooseBox {
+  padding: 10px 20px;
+  font-size: 14px;
 }
-.d_rs_selectBox{
-	float: left;
+
+.d_rs_selectBox {
+  float: left;
 }
-.d_rs_selectBox select{
-	margin:0 4px;
+
+.d_rs_selectBox select {
+  margin: 0 4px;
 }
-.d_rs_tabBox{
-	float: right;
+
+.d_rs_tabBox {
+  float: right;
 }
-.d_rs_radioBox{
-	clear: both;
+
+.d_rs_radioBox {
+  clear: both;
 }
-.d_rs_tabBox li{
-	float: left;
-	color:@nomalGreen;
-	width: 40px;
-	height: 24px;
-	text-align: center;
-	border:1px solid @nomalGreen;
-	border-radius:4px;
-	margin-left: 12px;
-	font-size: 12px;
-	line-height: 22px;
+
+.d_rs_tabBox li {
+  float: left;
+  color: #767779;
+  width: 40px;
+  height: 24px;
+  text-align: center;
+  border: 1px solid #767779;
+  border-radius: 4px;
+  margin-left: 12px;
+  font-size: 12px;
+  line-height: 22px;
+  cursor: pointer;
 }
-.d_rs_tabBox .d_rs_tabCurrent{
-	background-color: @nomalGreen;
-	color:#fff;
+
+.d_rs_tabBox .d_rs_tabCurrent {
+  background-color: #767779;
+  color: #fff;
 }
+
 // .d_rs_radioBox:first-child .d_rs_radio{
 // 	margin-left: -6px;
 // }
-.d_rs_radio:first-child{
-	margin-left: -10px;
+.d_rs_radio:first-child {
+  margin-left: -10px;
 }
-.d_rs_radio{
-	float: left;
-	line-height: 28px;
-	font-size: 12px;
-	margin-top: 4px;
+
+.d_rs_radio {
+  float: left;
+  line-height: 28px;
+  font-size: 12px;
+  margin-top: 4px;
+  cursor: pointer;
 }
-.d_rs_table,.d_rs_table table{
-	width: 100%;
-	line-height: 34px;
+
+.d_rs_table, .d_rs_table table {
+  width: 100%;
+  line-height: 34px;
 }
-.d_rs_gBox{
-	
-}
+
+.d_rs_gBox {}
+
 // 近期战绩图表？？？
-.d_rs_canvasBox{
-	border-top: 1px dotted @grayBorder;
-	height: 210px;
-	padding-top: 20px;
+.d_rs_canvasBox {
+  border-top: 1px dotted @grayBorder;
+  height: 210px;
+  padding-top: 20px;
+  position: relative;
 }
-.d_rs_canvasHead{
-	text-align: center;
-	font-size: 14px;
-	font-weight: bolder;
+
+.d_rs_canvasHead {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bolder;
+  padding-bottom: 8px;
 }
+
+.d_rs_canvas {
+  height: 126px;
+}
+
+.d_rs_canvasPersent {
+  font-size: 30px;
+  min-width: 64px;
+  text-align: center;
+  position: absolute;
+  top: 100px;
+  left: 220px;
+  font-weight: bolder;
+}
+
+.d_rs_canvasPersent span {
+  font-size: 18px;
+}
+
+.d_rs_canvasLabel {
+  font-size: 14px;
+  text-align: center;
+  padding: 0 10px;
+  padding-bottom: 10px;
+}
+
 // 未来赛事
-.d_futureGameBox{
-	margin-top: 26px;
-	border:1px solid @grayBorder;
+.d_futureGameBox {
+  margin-top: 26px;
+  border: 1px solid @grayBorder;
 }
-.d_fg_content{
-	border-top: 1px solid @grayBorder;
+
+.d_fg_content {
+  border-top: 1px solid @grayBorder;
 }
-.d_fg_hBox,.d_fg_gBox{
-	width: 499px;
-	float: left;
-	line-height:34px;
+
+.d_fg_hBox, .d_fg_gBox {
+  width: 499px;
+  float: left;
+  line-height: 34px;
 }
-.d_fg_gBox{
-	border-left: 1px solid @grayBorder;
+
+.d_fg_gBox {
+  border-left: 1px solid @grayBorder;
 }
-.d_fg_content table{
-	width: 100%;
+
+.d_fg_content table {
+  width: 100%;
 }
+
 // 相关新闻
-.d_aboutNewsBox{
-	margin-top: 26px;
-	border:1px solid @grayBorder;
-}
-.d_an_content{
-	border-top: 1px solid @grayBorder;
-}
-.d_an_hBox,.d_an_gBox{
-	float: left;
-	width: 499px;
-}
-.d_an_gBox{
-	border-left: 1px solid @grayBorder;
-}
-.d_an_header{
-	line-height: 34px;
-	font-size: 12px;
-	font-weight: bolder;
-	text-align: center;
-	background-color: #eee;
-}
-.d_an_lineBox{
-	padding:15px 0px 15px 24px;
-	line-height: 32px;
-}
-.d_an_line span{
-	color: #ccc;
+.d_aboutNewsBox {
+  margin-top: 26px;
+  border: 1px solid @grayBorder;
 }
 
+.d_an_content {
+  border-top: 1px solid @grayBorder;
+}
 
+.d_an_hBox, .d_an_gBox {
+  float: left;
+  width: 499px;
+}
 
+.d_an_gBox {
+  border-left: 1px solid @grayBorder;
+}
 
+.d_an_header {
+  line-height: 34px;
+  font-size: 12px;
+  font-weight: bolder;
+  text-align: center;
+  background-color: #eee;
+}
 
+.d_an_lineBox {
+  padding: 15px 0px 15px 24px;
+  line-height: 32px;
+}
 
-
+.d_an_line span {
+  color: #ccc;
+}
