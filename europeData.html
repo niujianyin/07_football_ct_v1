@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>欧洲杯智能平台_新浪彩通</title>
+  <link rel="import" href="h/commonHead.html?__inline">
+  <link rel="stylesheet" href="l/common.less" type="text/css" media="screen" />
+  <link rel="stylesheet" href="l/index.less" type="text/css" media="screen" />
+  <!--<link rel="stylesheet" href="l/details.less" type="text/css" media="screen">-->
+  <link rel="stylesheet" href="l/watchData.less" type="text/css" media="screen">
+</head>
+
+<body>
+  <!-- 头部 html start -->
+  <!--  lb__link-->
+  <link rel="import" href="h/top.html?__inline">
+  <link rel="import" href="h/headerData.html?__inline">
+  <!--  lb__link-->
+  <!--[if lte IE 9]>
+<script src="./j/lib/respond.min.js"></script>
+<script src="./j/lib/html5shiv.min.js"></script>
+<![endif]-->
+  <!-- 头部 html end -->
+  <!--内容主体-->
+  <div class="e_main wrap d_lineBorder">
+    <div class="d_lineHeader">
+      <span>动态欧赔</span>
+    </div>
+    <div class="e_chooseBox clearfix">
+      <div class="e_checkBox">
+        <input type="radio" name="e_choose" checked="checked">
+        <label>全部公司</label>
+        <input type="radio" name="e_choose">
+        <label>主流公司</label>
+        <input type="radio" name="e_choose">
+        <label>交易所</label>
+        <input type="radio" name="e_choose">
+        <label>非交易所</label>
+      </div>
+      <div class="e_chooseInfo">
+        注：<span class="e_infoRed">红色表示水位上升</span>，<em class="e_infoBlue">蓝色表示水位下降</em>，点击<em class="e_infoBlue">盘口</em>查看变化过程
+      </div>
+    </div>
+    <div id="e_dataTableBox">
+      <script id="temp_europe" type="text/html">
+        <table class="e_dataTable" id="e_dataTable">
+          <tr>
+            <th rowspan="2" colspan="2" class="e_borderRight">欧赔公司</th>
+            <th colspan="7" class="e_borderBottom">欧赔</th>
+            <th rowspan="2" colspan="3" class="e_borderBoth">凯利指数</th>
+            <th rowspan="2">最新变盘时间</th>
+          </tr>
+          <tr>
+            <th>胜</th>
+            <th>平</th>
+            <th>负</th>
+            <th>胜率</th>
+            <th>和率</th>
+            <th>负率</th>
+            <th>返还率</th>
+          </tr>
+          {{each data as value index}}
+          <tbody class="e_tBody if_exchange{{value.if_exchange}} if_famous{{value.if_famous}}" id="{{value.id}}">
+            <tr class="e_border2">
+              <td class="e_dataStar" rowspan="2"></td>
+              <td class="e_dataName e_borderRight" rowspan="2">{{value.name}}</td>
+
+              {{if value.odds.nearOne.o1 -0 > value.odds.ini.o1 -0}}
+              <td class="e_infoRed e_borderLeft"> {{value.odds.nearOne.o1}}↑</td>
+              {{else if value.odds.nearOne.o1 -0
+              < value.odds.ini.o1 -0 }} <td class=" e_infoBlue e_borderLeft">{{value.odds.nearOne.o1}}↓</td>
+                {{else if value.odds.nearOne.o1-0 == value.odds.ini.o1-0 }}
+                <td class="e_borderLeft ">{{value.odds.nearOne.o1}}</td>
+                {{/if}} {{if value.odds.nearOne.o2 -0 > value.odds.ini.o2 -0}}
+                <td class="e_infoRed"> {{value.odds.nearOne.o2}}↑</td>
+                {{else if value.odds.nearOne.o2 -0
+                < value.odds.ini.o2 -0 }} <td class=" e_infoBlue ">{{value.odds.nearOne.o2}}↓</td>
+                  {{else if value.odds.nearOne.o2-0 == value.odds.ini.o2-0 }}
+                  <td class=" ">{{value.odds.nearOne.o2}}</td>
+                  {{/if}} {{if value.odds.nearOne.o3 -0 > value.odds.ini.o3 -0}}
+                  <td class="e_infoRed "> {{value.odds.nearOne.o3}}↑</td>
+                  {{else if value.odds.nearOne.o3 -0
+                  < value.odds.ini.o3 -0 }} <td class=" e_infoBlue ">{{value.odds.nearOne.o3}}↓</td>
+                    {{else if value.odds.nearOne.o3-0 == value.odds.ini.o3-0 }}
+                    <td class=" ">{{value.odds.nearOne.o3}}</td>
+                    {{/if}}
+                    <td>{{value.gl.nearOne.p1 | toPersent}}</td>
+                    <td>{{value.gl.nearOne.p2 | toPersent}}</td>
+                    <td>{{value.gl.nearOne.p3 | toPersent}}</td>
+                    <td class="e_borderRight">{{value.odds.nearOne.backOne}}%</td>
+                    {{if !!value.kelly.nearOne.e1}}
+                    <td>{{value.kelly.nearOne.e1}}</td>
+                    <td>{{value.kelly.nearOne.e2}}</td>
+                    <td>{{value.kelly.nearOne.e3}}</td>
+
+                    {{else}}
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    {{/if}}
+                    <td class="e_borderLeft">{{value.odds.nearOne.change_time}}</td>
+            </tr>
+            <tr>
+              <td class=" ">{{value.odds.ini.o1}}</td>
+              <td class=" ">{{value.odds.ini.o2}}</td>
+              <td class="">{{value.odds.ini.o3}}</td>
+              <td>{{value.gl.ini.p1 | toPersent}}</td>
+              <td>{{value.gl.ini.p2 | toPersent}}</td>
+              <td>{{value.gl.ini.p3 | toPersent}}</td>
+              <td class="e_borderRight">{{value.odds.ini.backOne}}%</td>
+              {{if !!value.kelly.ini.e1}}
+              <td>{{value.kelly.ini.e1}}</td>
+              <td>{{value.kelly.ini.e2}}</td>
+              <td>{{value.kelly.ini.e3}}</td>
+              {{else}}
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              {{/if}}
+              <td class="e_borderLeft">{{value.odds.ini.change_time}}</td>
+            </tr>
+          </tbody>
+          {{/each}}
+        </table>
+      </script>
+    </div>
+    <input type="hidden" name="otherData" id="i_europeData" />
+  </div>
+  <!-- 弹出层 -->
+  <div class="e_popip">
+    <div class="e_pop_tit"><span></span></div>
+    <div class="e_pop_wrap">
+      <table class="e_pop_table" id="e_pop_table">
+        <!--<script id="temp_e_pop" type="text/html">-->
+        <tr>
+          <th>胜</th>
+          <th>平</th>
+          <th>负</th>
+          <th>返还率</th>
+          <th>更新时间</th>
+        </tr>
+        <tbody class="e_pop_tbody">
+        </tbody>
+        <!--</script>-->
+      </table>
+    </div>
+  </div>
+  <!--内容主体 end-->
+  <!-- 弹出层 html start -->
+  <link rel="import" href="h/popup.html?__inline">
+  <!-- 弹出层 html end -->
+  <!-- 底部 html start -->
+  <link rel="import" href="h/footer.html?__inline">
+  <!-- 底部 html end -->
+</body>
+<script src="./j/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="./j/lib/lib_top.js"></script>
+<script type="text/javascript" src="./j/sinaLogin.js"></script>
+<script type="text/javascript" src="./j/lib/template.js"></script>
+<script type="text/javascript" src="./j/lib/echarts.min.js"></script>
+<script type="text/javascript" src="./j/euroData.js"></script>

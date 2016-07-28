@@ -26,13 +26,16 @@
     <!--联赛积分榜-->
     <div class="d_gamesScoreBox">
       <div class="d_gs_tit clearfix d_boxTit">
-        <a href="" class="d_boxTitTxt">联赛积分榜</a>
+        <script id="temp_d_gs_tit" type="text/html">
+         <a href="" class="d_boxTitTxt">联赛积分榜</a>
         <a href="" class="d_scoreMore">更多&nbsp;>></a>
+        </script>  
       </div>
       <div class="d_gs_content clearfix">
         <!--主队-->
         <div class="d_gs_hTableBox">
-          <div class="d_gs_hTit">曼城[11]</div>
+        <script id="tempd_gs_hTableBox" type="text/html">          
+          <div class="d_gs_hTit">{{team_cn}}[{{team_order}}]</div>
           <table class="d_gs_h_table">
             <tr class="d_tr1st">
               <th class="d_td1st"></th>
@@ -48,46 +51,48 @@
             </tr>
             <tr>
               <td class="d_td1st">总成绩</td>
-              <td>22</td>
-              <td>9</td>
-              <td>9</td>
-              <td>9</td>
-              <td>20/23</td>
-              <td>10</td>
-              <td>45</td>
-              <td>2</td>
-              <td>80%</td>
+              <td>{{count}}</td>
+              <td>{{win}}</td>
+              <td>{{draw}}</td>
+              <td>{{lose}}</td>
+              <td>{{goal}}/{{losegoal}}</td>
+              <td>{{truegoal}}</td>
+              <td>{{score}}</td>
+              <td>{{team_order}}</td>
+              <td>{{~~(win/count*100)}}%</td>
             </tr>
             <tr>
               <td class="d_td1st">主场</td>
-              <td>22</td>
-              <td>9</td>
-              <td>9</td>
-              <td>9</td>
-              <td>20/23</td>
-              <td>10</td>
-              <td>45</td>
-              <td>2</td>
-              <td>80%</td>
+              <td>{{h_count}}</td>
+              <td>{{home_win}}</td>
+              <td>{{home_draw}}</td>
+              <td>{{home_lose}}</td>
+              <td>{{home_goal}}/{{home_losegoal}}</td>
+               <td>{{home_truegoal}}</td>
+              <td>{{home_score}}</td>
+              <td>{{home_team_order}}</td>
+              <td>{{~~(home_win/h_count*100)}}%</td>
             </tr>
             <tr>
               <td class="d_td1st">客场</td>
-              <td>22</td>
-              <td>9</td>
-              <td>9</td>
-              <td>9</td>
-              <td>20/23</td>
-              <td>10</td>
-              <td>45</td>
-              <td>2</td>
-              <td>80%</td>
+              <td>{{g_count}}</td>
+              <td>{{away_win}}</td>
+              <td>{{away_draw}}</td>
+              <td>{{away_lose}}</td>
+              <td>{{away_goal}}/{{away_losegoal}}</td>
+               <td>{{away_truegoal}}</td>
+              <td>{{away_score}}</td>
+              <td>{{away_team_order}}</td>
+              <td>{{~~(away_win/g_count*100)}}%</td>
             </tr>
           </table>
+           </script>  
         </div>
         <!--客队-->
         <div class="d_gs_gTableBox">
-          <div class="d_gs_gTit">曼城[11]</div>
-          <table class="d_gs_g_table">
+        <script id="tempd_gs_gTableBox" type="text/html">                    
+          <div class="d_gs_gTit">{{team_cn}}[{{team_order}}]</div>
+          <table class="d_gs_h_table">
             <tr class="d_tr1st">
               <th class="d_td1st"></th>
               <th>场次</th>
@@ -102,41 +107,42 @@
             </tr>
             <tr>
               <td class="d_td1st">总成绩</td>
-              <td>22</td>
-              <td>9</td>
-              <td>9</td>
-              <td>9</td>
-              <td>20/23</td>
-              <td>10</td>
-              <td>45</td>
-              <td>2</td>
-              <td>80%</td>
+              <td>{{count}}</td>
+              <td>{{win}}</td>
+              <td>{{draw}}</td>
+              <td>{{lose}}</td>
+              <td>{{goal}}/{{losegoal}}</td>
+              <td>{{truegoal}}</td>
+              <td>{{score}}</td>
+              <td>{{team_order}}</td>
+              <td>{{~~(win/count*100)}}%</td>
             </tr>
             <tr>
               <td class="d_td1st">主场</td>
-              <td>22</td>
-              <td>9</td>
-              <td>9</td>
-              <td>9</td>
-              <td>20/23</td>
-              <td>10</td>
-              <td>45</td>
-              <td>2</td>
-              <td>80%</td>
+              <td>{{h_count}}</td>
+              <td>{{home_win}}</td>
+              <td>{{home_draw}}</td>
+              <td>{{home_lose}}</td>
+              <td>{{home_goal}}/{{home_losegoal}}</td>
+               <td>{{home_truegoal}}</td>
+              <td>{{home_score}}</td>
+              <td>{{home_team_order}}</td>
+              <td>{{~~(home_win/h_count*100)}}%</td>
             </tr>
             <tr>
               <td class="d_td1st">客场</td>
-              <td>22</td>
-              <td>9</td>
-              <td>9</td>
-              <td>9</td>
-              <td>20/23</td>
-              <td>10</td>
-              <td>45</td>
-              <td>2</td>
-              <td>80%</td>
+              <td>{{g_count}}</td>
+              <td>{{away_win}}</td>
+              <td>{{away_draw}}</td>
+              <td>{{away_lose}}</td>
+              <td>{{away_goal}}/{{away_losegoal}}</td>
+               <td>{{away_truegoal}}</td>
+              <td>{{away_score}}</td>
+              <td>{{away_team_order}}</td>
+              <td>{{~~(away_win/g_count*100)}}%</td>
             </tr>
           </table>
+          </script>  
         </div>
       </div>
     </div>

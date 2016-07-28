@@ -27,14 +27,19 @@ var ajaxData = (function () {
       var jsonpName = "getMatchInfo_" + matchId;
       _jsonpAjax(jsonpUrl, jsonpName, callback);
     },
-    gamesScore: function (callback) {
-      callback()
+       // 联赛积分
+    gamesScore: function (team1Id,team2Id,callback) {
+      var team1Id = 103,
+        team2Id = 104;
+      var jsonpUrl = "http://platform.sina.com.cn/sports_all/client_api?app_key=2872801998&_sport_t_=football&_sport_s_=opta&_sport_a_=teamOrder&type=1&id="+team1Id+","+team2Id+"&use_type=team";
+      var jsonpName = "gamesScore_" + team1Id +"_"+ team2Id;
+      _jsonpAjax(jsonpUrl, jsonpName, callback);
     },
     // 球队实力
     teamPowe: function (team1Id, team2Id, callback) {
       var hid = team1Id,
         aid = team2Id;
-      var jsonpUrl = 'http://odds.sports.sina.com.cn/uefa/matchModelStats/?hid=' + hid + '&aid=' + aid + '&format=json'
+      var jsonpUrl = 'http://odds.sports.sina.com.cn/uefa/matchModelStats/?hid=' + hid + '&aid=' + aid + '&format=json';
       var jsonpName = "matchModelStats" + hid + aid;
       _jsonpAjax(jsonpUrl, jsonpName, callback);
     },

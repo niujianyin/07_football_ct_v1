@@ -1,10 +1,28 @@
 __inline('lb_modules/ajaxData.js');
+__inline('lb_modules/viewWork.js');
+  template.helper("distance", function (distance_2_cur) {
+    if (distance_2_cur <= 1440 && distance_2_cur > 60) {
+      var dH = (distance_2_cur - 0) / 60;
+      return '(距离比赛还有' + parseInt(dH) + '小时)';
+    } else if (distance_2_cur > 1440) {
+      var dD = (distance_2_cur - 0) / 1440;
+      return '(距离比赛还有' + parseInt(dD) + '天)';
+    } else if (distance_2_cur < 60) {
+      return '(距离比赛还有' + distance_2_cur + '分钟)';
+    }
+  });
 (function () {
   // 页面加载
   var matchId = util.getQueryString("m_id") || 3453592;
-  headData.set(matchId, function (teamInfo) {
+ ajaxData.headerSet(matchId, function (teamInfo) {
+   var pageInfo = teamInfo.data;
+    viewWork.header(teamInfo, function (objBack) {
+      // console.log(objBack);
+      var html = template('temp_d_header', objBack);
+      $(".d_headerContainer")[0].innerHTML = html;
+    });
     // 购买小炮预测 
-    payforGun(teamInfo);
+    // payforGun(teamInfo);
     ajaxData.getAsia(matchId, function (data) {
       for (var i = 0, len = data.data.length; i < len; i++) {
         data.data[i].nearOne = data.data[i]['new'];

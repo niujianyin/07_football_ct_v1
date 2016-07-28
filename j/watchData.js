@@ -58,13 +58,30 @@ __inline('lb_modules/setCharts.js');
       var html = template('temp_d_header', objBack);
       $(".d_headerContainer")[0].innerHTML = html;
     });
-    // **************************联赛积分榜???***************************************************
-    ajaxData.gamesScore(function () {
-      console.log(pageInfo);
-    });
-    // **************************球队整体实力***************************************************
     var team1Id = pageInfo.Team1Id;
     var team2Id = pageInfo.Team2Id;
+    // **************************联赛积分榜???***************************************************
+    ajaxData.gamesScore(team1Id, team2Id, function (data) {
+      console.log(data);
+      // 测试数据
+            var team1Id = 103,
+        team2Id = 104;
+      var titHtml = template('temp_d_gs_tit', data);
+      $(".d_gs_tit")[0].innerHTML = titHtml;
+      // 主队
+      var hData=data.data[team1Id];
+      hData.h_count=parseInt(hData.home_win)+parseInt(hData.home_draw)+parseInt(hData.home_lose);
+      hData.g_count=parseInt(hData.count)-hData.h_count;
+      var hostHtml = template('tempd_gs_hTableBox', hData);
+      $(".d_gs_hTableBox")[0].innerHTML = hostHtml;
+      // 客队
+       var gData=data.data[team2Id];
+      gData.h_count=parseInt(gData.home_win)+parseInt(gData.home_draw)+parseInt(gData.home_lose);
+      gData.g_count=parseInt(gData.count)-gData.h_count;
+      var gHtml = template('tempd_gs_gTableBox', gData);
+      $(".d_gs_gTableBox")[0].innerHTML = gHtml;
+    });
+    // **************************球队整体实力***************************************************
     var chartsOp = {};
     ajaxData.teamPowe(team1Id, team2Id, function (objTeam) {
       // console.log(objTeam);

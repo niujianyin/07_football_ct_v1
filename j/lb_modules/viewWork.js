@@ -2,7 +2,15 @@ var viewWork = (function () {
   var pub = {
     header: function (oDom, callback) {
       var backObj = oDom;
-      backObj.data.status = 0;
+      // backObj.data.status = 0;
+        var strUrl=window.location.href;
+        if(strUrl.indexOf("watchData.html")>0){
+          oDom.nav_w="d_tabCurrent";
+        }else if(strUrl.indexOf("asiaData.html")>0){
+          oDom.nav_a="d_tabCurrent";
+        }else if(strUrl.indexOf("europeData.html")>0){
+          oDom.nav_e="d_tabCurrent";
+        }
       callback(backObj);
     },
     historyVs: function (viewNum, viewRadio, historyInfo) {
