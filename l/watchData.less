@@ -167,8 +167,9 @@
 }
 
 .d_payOrShow {
-  margin: 16px 54px 0 54px;
+  margin: 16px 43px 0 43px;
   width: 246px;
+  position: relative;
 }
 
 .d_payBtn {
@@ -183,7 +184,45 @@
   background-repeat: no-repeat;
   background-image: url(../i/gameData/btn_topay.png);
 }
-
+.d_payBtnp{
+  display: none;
+}
+.d_showAnswerBox{
+  display: none;
+}
+.d_showAnswerBoxp{
+  display: block;
+  padding:17px 12px;
+  font-size: 16px;
+  color: #fff;
+  line-height: 28px;
+  text-align: right;
+}
+.d_blueAnswer{
+	height: 28px;
+	background-color: @blueFont;
+	border-radius:28px;
+	position: absolute;
+	top: 17px;
+	width: 10%;
+	right: 10px;
+}
+.d_grayAnswer{
+	height: 28px;
+	background-color: @grayFont;
+	border-radius:28px;
+	position: absolute;
+	top: 17px;
+	width: 20%;
+	right: 10px;
+}
+.d_redAnswer{
+	width: 224px;
+	height: 28px;
+	background-color: @redFont;
+	border-radius:28px;
+	text-align: left;
+}
 .d_redExplain span {
   display: inline-block;
   width: 14px;

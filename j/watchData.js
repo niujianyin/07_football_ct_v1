@@ -52,14 +52,26 @@ __inline('lb_modules/setCharts.js');
   // 头部组件
   ajaxData.headerSet(matchId, function (headInfo) {
     var pageInfo = headInfo.data;
-    viewWork.header(headInfo, function (objBack) {
-      // console.log(objBack);
-
+    viewWork.header(headInfo, function (objBack) {  
       var html = template('temp_d_header', objBack);
       $(".d_headerContainer")[0].innerHTML = html;
     });
     var team1Id = pageInfo.Team1Id;
     var team2Id = pageInfo.Team2Id;
+    // 购买按钮点击
+    $(".d_headerContainer").on("click",".d_payBtn",function(){
+      var playType=$(this).text();
+      var typeObj={
+        "购买亚盘":"ul",
+        "购买胜平负":"spf",
+        "购买大小球":"dx"
+      };
+      var userInfo=util.wbId;
+      if(!!userInfo){
+         payFor(typeObj[playType],userInfo);
+      }
+     
+    });
     // **************************联赛积分榜???***************************************************
     ajaxData.gamesScore(team1Id, team2Id, function (data) {
       console.log(data);

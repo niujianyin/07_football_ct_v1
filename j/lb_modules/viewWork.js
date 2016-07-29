@@ -10,7 +10,18 @@ var viewWork = (function () {
           oDom.nav_a="d_tabCurrent";
         }else if(strUrl.indexOf("europeData.html")>0){
           oDom.nav_e="d_tabCurrent";
+        };
+        // 购买状态
+        backObj.payInfo={
+          t_sx:"",
+          t_dx:"p",
+          t_spf:"p"
         }
+         var userPayInfo=null;
+        if(!!util.wbId){
+        userPayInfo=payShow(typeObj[playType],util.wbId);
+        objBack.payInfo=userPayInfo;
+      }
       callback(backObj);
     },
     historyVs: function (viewNum, viewRadio, historyInfo) {
@@ -111,3 +122,18 @@ var viewWork = (function () {
   };
   return pub;
 })();
+
+// 支付模块
+// payTypes 玩法字符串
+// userInfo 用户信息对象
+function payFor(payType,userInfo){
+
+// 支付流程
+};
+// payTypes 玩法数组
+// userInfo 用户信息对象
+function payShow(payTypes,userInfo){
+
+var payInfo={};
+return payInfo;
+}

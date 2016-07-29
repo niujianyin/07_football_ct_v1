@@ -70,7 +70,7 @@
               <td>{{home_goal}}/{{home_losegoal}}</td>
                <td>{{home_truegoal}}</td>
               <td>{{home_score}}</td>
-              <td>{{home_team_order}}</td>
+              <td>-</td>
               <td>{{~~(home_win/h_count*100)}}%</td>
             </tr>
             <tr>
@@ -82,7 +82,7 @@
               <td>{{away_goal}}/{{away_losegoal}}</td>
                <td>{{away_truegoal}}</td>
               <td>{{away_score}}</td>
-              <td>{{away_team_order}}</td>
+              <td>-</td>
               <td>{{~~(away_win/g_count*100)}}%</td>
             </tr>
           </table>
@@ -126,7 +126,7 @@
               <td>{{home_goal}}/{{home_losegoal}}</td>
                <td>{{home_truegoal}}</td>
               <td>{{home_score}}</td>
-              <td>{{home_team_order}}</td>
+              <td>-</td>
               <td>{{~~(home_win/h_count*100)}}%</td>
             </tr>
             <tr>
@@ -138,7 +138,7 @@
               <td>{{away_goal}}/{{away_losegoal}}</td>
                <td>{{away_truegoal}}</td>
               <td>{{away_score}}</td>
-              <td>{{away_team_order}}</td>
+              <td>-</td>
               <td>{{~~(away_win/g_count*100)}}%</td>
             </tr>
           </table>
@@ -479,7 +479,7 @@
             <div class="d_an_header">{{teamName}}</div>
             <div class="d_an_lineBox">
               {{each data as value index}}
-              <div class="d_an_line"><span>●&nbsp;</span><a href="{{value.url}}">{{value.title}}</a></div>
+              <div class="d_an_line"><span>●&nbsp;</span><a href="{{value.url}}" target="_blank">{{value.title}}</a></div>
               {{/each}}
             </div>
           </script>
@@ -489,7 +489,7 @@
             <div class="d_an_header">{{teamName}}</div>
             <div class="d_an_lineBox">
               {{each data as value index}}
-              <div class="d_an_line"><span>●&nbsp;</span><a href="{{value.url}}">{{value.title}}</a></div>
+              <div class="d_an_line"><span>●&nbsp;</span><a href="{{value.url}}" target="_blank">{{value.title}}</a></div>
               {{ /each}}
             </div>
           </script>
