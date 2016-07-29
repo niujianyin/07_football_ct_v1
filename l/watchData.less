@@ -1,0 +1,857 @@
+// 头部
+// 导航
+@grayBorder: #ebebeb;
+@redFont: #e04f5c;
+@blueFont: #2a6ed7;
+@greenFont: #2cb759;
+@grayFont: #c7c7ce;
+@darkGreen: #055023;
+@nomalGreen: #0ca943;
+@greenBlue: #60daad;
+@charsBlue: #72c4e3;
+@charsGreen: #46e2a9;
+@charsRed: #e04f5c;
+@charsDark: #46556d;
+@charsLight: #8dcbd8;
+.wrap {
+  width: 1000px;
+  margin: auto;
+}
+
+.d_navwrap {
+  position: absolute;
+  left: 50%;
+  margin-left: -500px;
+}
+
+.d_nav {
+  background-color: #0ca943;
+}
+
+.d_logo {
+  float: left;
+}
+
+.d_navBox {
+  float: left;
+  background-color: #055c28;
+  line-height: 54px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.d_navBox em {
+  color: #0ca943;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.d_navBox li {
+  float: left;
+  width: 136px;
+  text-align: center;
+  &:first-child {
+    margin-right: -20px;
+  }
+}
+
+.d_navBox li a {
+  color: #fff;
+}
+
+.d_navBg {
+  float: right;
+  width: 50%;
+  background-color: #055c28;
+  height: 54px;
+}
+
+// 头部展示
+.d_headerContainer {
+  background-image: url("../i/gameData/bg_header.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 1px;
+  border-bottom: 1px solid @grayBorder;
+  min-height: 387px;
+}
+
+.d_headerInfoBox {
+  margin-top: 30px;
+}
+
+.d_h_infoBox, .d_gameInfoBox, .d_g_infoBox {
+  width: 333px;
+  float: left;
+  text-align: center;
+}
+
+.d_h_logo, .d_g_logo {}
+
+.d_h_name, .d_g_name, .d_score {
+  line-height: 28px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.d_h_eName, .d_g_eName {
+  line-height: 22px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.d_gameName {
+  font-size: 28px;
+  font-weight: bolder;
+  line-height: 54px;
+}
+
+.d_gameTime, .d_timeCount {
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.d_payBtnGroup {
+  background-image: url(../i/gameData/bg_paybtn.png);
+  background-position: center;
+  // background-repeat: no-repeat;
+  height: 132px;
+  margin-top: 22px;
+}
+
+.d_pay_rqBox, .d_pay_spfBox, .d_pay_dxBox {
+  float: left;
+  width: 333px;
+  text-align: center;
+}
+
+.d_pre_info {
+  position: relative;
+  // margin: 16px 54px 0 54px;
+  top: 16px;
+  left: 60px;
+  right: 54px;
+  width: 228px;
+  .d_redNum {
+    position: absolute;
+    left: 20px;
+    font-size: 16px;
+    color: @redFont;
+  }
+  .d_greenShadow {
+    width: 100%;
+    font-size: 16px;
+    color: @greenFont;
+    font-weight: bolder;
+    text-shadow: #fff 2px 0 0, #fff 0 2px 0, #fff -2px 0 0, #fff 0 -2px 0;
+    -webkit-text-shadow: #fff 2px 0 0, #fff 0 2px 0, #fff -2px 0 0, #fff 0 -2px 0;
+    -moz-text-shadow: #fff 2px 0 0, #fff 0 2px 0, #fff -2px 0 0, #fff 0 -2px 0;
+    *filter: Glow(color=#fff, strength=2);
+  }
+  .d_blackShadow {
+    width: 100%;
+    font-size: 16px;
+    color: #333;
+    font-weight: bolder;
+    text-shadow: #fff 2px 0 0, #fff 0 2px 0, #fff -2px 0 0, #fff 0 -2px 0;
+    -webkit-text-shadow: #fff 2px 0 0, #fff 0 2px 0, #fff -2px 0 0, #fff 0 -2px 0;
+    -moz-text-shadow: #fff 2px 0 0, #fff 0 2px 0, #fff -2px 0 0, #fff 0 -2px 0;
+    *filter: Glow(color=#fff, strength=2);
+  }
+  .d_blueNum {
+    position: absolute;
+    right: 20px;
+    font-size: 16px;
+    color: @blueFont;
+  }
+}
+
+.d_payOrShow {
+  margin: 16px 43px 0 43px;
+  width: 246px;
+  position: relative;
+}
+
+.d_payBtn {
+  width: 246px;
+  height: 66px;
+  line-height: 60px;
+  text-align: left;
+  text-indent: 40px;
+  color: #fff;
+  font-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../i/gameData/btn_topay.png);
+}
+.d_payBtnp{
+  display: none;
+}
+.d_showAnswerBox{
+  display: none;
+}
+.d_showAnswerBoxp{
+  display: block;
+  padding:17px 12px;
+  font-size: 16px;
+  color: #fff;
+  line-height: 28px;
+  text-align: right;
+}
+.d_blueAnswer{
+	height: 28px;
+	background-color: @blueFont;
+	border-radius:28px;
+	position: absolute;
+	top: 17px;
+	width: 10%;
+	right: 10px;
+}
+.d_grayAnswer{
+	height: 28px;
+	background-color: @grayFont;
+	border-radius:28px;
+	position: absolute;
+	top: 17px;
+	width: 20%;
+	right: 10px;
+}
+.d_redAnswer{
+	width: 224px;
+	height: 28px;
+	background-color: @redFont;
+	border-radius:28px;
+	text-align: left;
+}
+.d_redExplain span {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-left: 10px;
+  margin-right: 6px;
+  background-color: @redFont;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+.d_blueExplain span {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-color: @blueFont;
+  margin-left: 10px;
+  margin-right: 6px;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+.d_grayExplain span {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-color: @grayFont;
+  margin-left: 10px;
+  margin-right: 6px;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+.d_colorBox div {
+  display: inline-block;
+  line-height: 14px;
+}
+
+// 二级导航
+.d_pageTabBox {
+  width: 648px;
+  margin: auto;
+  margin-top: 22px;
+}
+
+.d_pageTab li {
+  float: left;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bolder;
+  width: 216px;
+}
+
+.d_pageTab a {
+  color: #313336;
+}
+
+.d_tabCurrent {
+  // background-image: url(../i/gameData/bg_nav2.png);
+  // background-repeat: no-repeat;
+  // background-position: center;
+}
+
+.d_tabCurrent a {
+  // color: #fff;
+  display: inline-block;
+  line-height: 40px;
+  border-bottom: 4px solid #0ba13c;
+}
+
+// 内容主体
+.d_lineHeader, .d_boxTit {
+  line-height: 48px;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.d_lineHeader span, .d_boxTitTxt {
+  border-left: 10px solid @nomalGreen;
+  padding-left: 20px;
+}
+
+.d_boxTit .d_scoreMore {
+  float: right;
+  font-size: 14px;
+  font-weight: normal;
+  color: @nomalGreen;
+  margin-right: 20px;
+}
+
+.d_gamesScoreBox {
+  border: 1px solid @grayBorder;
+  margin-top: 25px;
+}
+
+// 联赛积分榜
+.d_gs_content {
+  border-top: 1px solid @grayBorder;
+}
+
+.d_gs_hTableBox, .d_gs_gTableBox {
+  float: left;
+  width: 499px;
+  text-align: center;
+}
+
+.d_gs_gTableBox {
+  border-left: 1px solid @grayBorder;
+}
+
+.d_gs_hTit, .d_gs_gTit {
+  font-size: 12px;
+  font-weight: bolder;
+  line-height: 34px;
+}
+
+.d_gs_h_table, .d_gs_g_table {
+  width: 100%;
+  line-height: 34px;
+}
+
+.d_main td, .d_main th {
+  vertical-align: center;
+  text-align: center;
+}
+
+.d_main th {
+  background-color: #eee;
+  color: #a3a5aa;
+}
+
+.d_main td {
+  border-top: 1px dotted @grayBorder;
+}
+
+// 球队整体实力
+.d_powerShowBox {
+  margin-top: 26px;
+  border: 1px solid @grayBorder;
+}
+
+.d_teamPoweVsBox, .d_totalDataBox {
+  float: left;
+  width: 499px;
+  height: 350px;
+}
+
+.d_teamPoweVsBox {
+  border-right: 1px solid @grayBorder;
+}
+
+.d_tpv_content {
+  height: 312px;
+}
+
+// 综合统计
+.d_td_content {
+  padding: 50px 60px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.d_td_info {
+  font-size: 14px;
+}
+
+.d_td_info span {
+  margin-left: 6px;
+}
+
+.d_td_lineBox {
+  margin-top: 30px;
+}
+
+.d_td_line {
+  position: relative;
+  // line-height: 20px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.d_td_lineLeft {
+  // float: left;
+  position: absolute;
+  left: 0;
+  height: 20px;
+  z-index: 2;
+  top: 0;
+  width: 136px;
+}
+
+.d_td_lineRight {
+  position: absolute;
+  right: 0;
+  height: 20px;
+  z-index: 2;
+  top: 0;
+  width: 136px;
+}
+
+.d_td_lineGray {
+  width: 100%;
+  background-color: #ececf0;
+  height: 20px;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.d_td_lineGreen {
+  position: absolute;
+  top: 0;
+  height: 20px;
+  border-radius: 20px;
+  background-color: @charsGreen;
+  width: 10%;
+}
+
+.d_td_lineLeft .d_td_lineGreen {
+  right: 0;
+}
+
+.d_td_txt {
+  font-weight: bolder;
+}
+
+.d_td_lineTxt {
+  position: absolute;
+  width: 136px-4px;
+  top: 0;
+  height: 20px;
+  color: #fff;
+  z-index: 3;
+}
+
+.d_td_lineLeft .d_td_lineTxt {
+  text-align: right;
+  padding-right: 2px;
+}
+
+.d_td_lineRight .d_td_lineTxt {
+  text-align: left;
+  padding-left: 4px;
+}
+
+// 历史交战记录
+.d_historyVsBox {
+  margin-top: 26px;
+  border: 1px solid @grayBorder;
+}
+
+.d_hv_chooseBox {
+  border-top: 1px solid @grayBorder;
+  line-height: 48px;
+}
+
+.d_hv_selectBox {
+  float: left;
+  margin-left: 26px;
+}
+
+.d_hv_radioBox {
+  float: left;
+  margin-left: 30px;
+}
+
+.d_hv_radioBox div {
+  float: left;
+}
+
+.d_hv_radio1 {
+  cursor: pointer;
+}
+
+.d_radio {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  vertical-align: center;
+  margin-right: 4px;
+  margin-left: 12px;
+  // background-position: center;
+  background-image: url(../i/gameData/btn_radio0.png);
+}
+
+.d_radioStatus0 {}
+
+.d_radioStatus1 {
+  background-image: url(../i/gameData/btn_radio1.png);
+}
+
+.d_hv_content {
+  width: 100%;
+}
+
+.d_hv_tableBox {
+  width: 100%;
+}
+
+.d_hv_tableBox table {
+  width: 100%;
+  line-height: 34px;
+}
+
+.d_redFont {
+  color: @redFont;
+}
+
+.d_hv_explain {
+  line-height: 45px;
+  padding-left: 20px;
+  border-top: 1px dotted #ebebeb;
+}
+
+// 近期战绩
+.d_recentScoreBox {
+  margin-top: 26px;
+  border: 1px solid @grayBorder;
+}
+
+.d_rs_content {
+  border-top: 1px solid @grayBorder;
+}
+
+.d_rs_hBox, .d_rs_gBox {
+  float: left;
+  width: 499px;
+}
+
+.d_rs_chooseBox {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.d_rs_selectBox {
+  float: left;
+}
+
+.d_rs_selectBox select {
+  margin: 0 4px;
+}
+
+.d_rs_tabBox {
+  float: right;
+}
+
+.d_rs_radioBox {
+  clear: both;
+}
+
+.d_rs_tabBox li {
+  float: left;
+  color: #767779;
+  width: 40px;
+  height: 24px;
+  text-align: center;
+  border: 1px solid #767779;
+  border-radius: 4px;
+  margin-left: 12px;
+  font-size: 12px;
+  line-height: 22px;
+  cursor: pointer;
+}
+
+.d_rs_tabBox .d_rs_tabCurrent {
+  background-color: #767779;
+  color: #fff;
+}
+
+// .d_rs_radioBox:first-child .d_rs_radio{
+// 	margin-left: -6px;
+// }
+.d_rs_radio:first-child {
+  margin-left: -10px;
+}
+
+.d_rs_radio {
+  float: left;
+  line-height: 28px;
+  font-size: 12px;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.d_rs_table, .d_rs_table table {
+  width: 100%;
+  line-height: 34px;
+}
+
+.d_rs_gBox {}
+
+// 近期战绩图表？？？
+.d_rs_canvasBox {
+  border-top: 1px dotted @grayBorder;
+  height: 210px;
+  padding-top: 20px;
+  position: relative;
+}
+
+.d_rs_canvasHead {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bolder;
+  padding-bottom: 8px;
+}
+
+.d_rs_canvas {
+  height: 126px;
+}
+
+.d_rs_canvasPersent {
+  font-size: 30px;
+  min-width: 64px;
+  text-align: center;
+  position: absolute;
+  top: 100px;
+  left: 220px;
+  font-weight: bolder;
+}
+
+.d_rs_canvasPersent span {
+  font-size: 18px;
+}
+
+.d_rs_canvasLabel {
+  font-size: 14px;
+  text-align: center;
+  padding: 0 10px;
+  padding-bottom: 10px;
+}
+
+// 未来赛事
+.d_futureGameBox {
+  margin-top: 26px;
+  border: 1px solid @grayBorder;
+}
+
+.d_fg_content {
+  border-top: 1px solid @grayBorder;
+}
+
+.d_fg_hBox, .d_fg_gBox {
+  width: 499px;
+  float: left;
+  line-height: 34px;
+}
+
+.d_fg_gBox {
+  border-left: 1px solid @grayBorder;
+}
+
+.d_fg_content table {
+  width: 100%;
+}
+
+// 相关新闻
+.d_aboutNewsBox {
+  margin-top: 26px;
+  border: 1px solid @grayBorder;
+}
+
+.d_an_content {
+  border-top: 1px solid @grayBorder;
+}
+
+.d_an_hBox, .d_an_gBox {
+  float: left;
+  width: 499px;
+}
+
+.d_an_gBox {
+  border-left: 1px solid @grayBorder;
+}
+
+.d_an_header {
+  line-height: 34px;
+  font-size: 12px;
+  font-weight: bolder;
+  text-align: center;
+  background-color: #eee;
+}
+
+.d_an_lineBox {
+  padding: 15px 0px 15px 24px;
+  line-height: 32px;
+}
+
+.d_an_line span {
+  color: #ccc;
+}
+// 亚盘欧赔样式
+
+.e_dataTable {
+  width: 100%;
+}
+
+.e_dataTable th,
+.e_dataTable td {
+  line-height: 38px;
+  text-align: center;
+}
+
+.e_dataTable th {
+  background-color: #eee;
+}
+
+.e_checkBox {
+  float: left;
+}
+
+.e_checkBox input {
+  margin-left: 6px;
+}
+
+.e_chooseBox {
+  padding: 12px;
+}
+
+.e_chooseInfo {
+  float: right;
+}
+
+.e_infoRed {
+  color: #ff0000;
+}
+
+.e_infoBlue {
+  color: #175ac4;
+}
+
+.e_main {
+  margin-bottom: 100px;
+}
+
+.e_dataStar {
+  width: 33px;
+  background-image: url(../i/icon_e_starw.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f7c086;
+}
+
+.e_startCurrent {
+  background-image: url(../i/icon_e_starr.png);
+}
+
+.e_tBody {
+  cursor: pointer;
+}
+
+.e_tbodyCurrent {
+  background-color: #f4dcbd;
+}
+
+.e_borderBoth {
+  border-left: 1px solid #e3e5e7;
+  border-right: 1px solid #e3e5e7;
+}
+
+.e_borderRight {
+  border-right: 1px solid #e3e5e7;
+}
+
+.e_borderLeft {
+  border-left: 1px solid #e3e5e7;
+}
+
+.e_borderBottom {
+  border-bottom: 1px solid #e3e5e7;
+}
+
+.e_border2 {
+  border: 1px dotted #e3e5e7;
+}
+
+// 弹层
+.e_popip {
+  display: none;
+  background-color: #fff;
+  position: fixed;
+  left: 50%;
+  margin-left: -250px;
+  padding: 10px;
+  top: 50%;
+  margin-top: -150px;
+  z-index: 11;
+}
+
+.e_pop_wrap {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 220px;
+  border-bottom: 1px solid #eee;
+}
+
+.e_pop_table {
+  width: 480px;
+}
+
+.e_pop_table tr {
+  line-height: 34px;
+  border-bottom: 1px dotted #eee;
+}
+
+.e_pop_table td, .e_pop_table th {
+  text-align: center;
+}
+
+.e_pop_table th {
+  background-color: #eee;
+}
+
+.e_pop_tbody {
+}
+
+.e_pop_tit {
+  height: 40px;
+}
+
+.e_pop_tit span {
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+  width: 14px;
+  height: 14px;
+  background-image: url(../i/icon_e_cloes.png);
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+#a_dataTable tr{
+  cursor: pointer;
+}

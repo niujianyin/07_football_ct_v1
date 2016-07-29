@@ -1,43 +1,57 @@
 <!--导航-->
 <div class="d_nav clearfix">
-  <div class="d_logo"><img src="" alt=""></div>
-  <ul class="d_navBox">
-    <li>首页</li>
-    <li> <em> /</em> 新浪彩票</li>
-    <li> <em>/</em> 超级伤停</li>
-    <li> <em>/</em> 动态澳盘</li>
-    <li> <em>/</em> 及时欧赔</li>
-    <li> <em>/</em> 小炮数据</li>
+  <div class="wrap clearfix d_navwrap">
+  <div class="d_logo"><img src="../i/gameData/logo_gun.png" alt=""></div>
+  <ul class="d_navBox clearfix">
+    <li><a href="">首页</a></li>
+    <li> <em> /</em> <a href="">新浪彩票</a></li>
+    <li> <em>/</em> <a href="">超级伤停</a></li>
+    <li> <em>/</em> <a href="">动态澳盘</a></li>
+    <li> <em>/</em> <a href="">及时欧赔</a></li>
+    <li> <em>/</em> <a href="">小炮数据</a></li>
   </ul>
+  </div>
+  <div class="d_navBg"></div>
 </div>
 <!--头部展示-->
 <div class="d_headerContainer">
-  <div class="d_headerInfoBox">
+  <script id="temp_d_header" type="text/html">
+  <div class="d_headerInfoBox clearfix wrap">
     <div class="d_h_infoBox">
       <div class="d_h_logo">
-        <img src="" alt="">
+        <img src="{{data.Flag1}}" alt="{{data.Team1}}">
       </div>
-      <div class="d_h_name">曼城</div>
-      <div class="d_h_eName">Manchester City Football Club</div>
+      <div class="d_h_name">{{data.Team1}}</div>
+      <div class="d_h_eName">{{data.Team1en}}</div>
     </div>
-  </div>
-  <!--比赛主要信息-->
+    <!--比赛主要信息-->
   <div class="d_gameInfoBox">
-    <div class="d_gameName">英超</div>
+    <div class="d_gameName">{{data.ln}}</div>
     <div class="d_gameTime">比赛时间
-      <span>2016-07-11</span>
-      <span>星期一</span>
-      <span>03:00</span>
+      <span>{{data.MatchDate}}</span>
+      <span>{{data.week_cn}}</span>
+      <span>{{data.MatchTime}}</span>
     </div>
+    {{if data.status==2||data.status==3}}
+      <div class="d_score">
+      {{data.Score1}}&nbsp;:&nbsp;{{data.Score2}}
+    </div>
+    {{else}}
     <div class="d_timeCount">
-      (距离开赛时间还剩02天)
+      {{data.distance_2_cur | distance}}
     </div>
-    <div class="d_score">
-      3:0
+    {{/if}}
+  </div>
+  <div class="d_g_infoBox">
+      <div class="d_g_logo">
+        <img src="{{data.Flag2}}" alt="{{data.Team2}}">
+      </div>
+      <div class="d_g_name">{{data.Team2}}</div>
+      <div class="d_g_eName">{{data.Team2en}}</div>
     </div>
   </div>
   <!--比赛预测结果-->
-  <div class="d_payBtnGroup">
+  <div class="d_payBtnGroup clearfix wrap">
     <!--亚盘结果-->
     <div class="d_pay_rqBox">
       <div class="d_pre_info  clearfix">
@@ -46,14 +60,14 @@
         <span class="d_blueNum">1.96</span>
       </div>
       <div class="d_payOrShow">
-        <div class="d_payBtn">
+        <div class="d_payBtn{{payInfo.t_sx}}">
           购买亚盘
         </div>
-        <div class="d_showAnswerBox">
+        <div class="d_showAnswerBox{{payInfo.t_sx}}">
           <div class="d_redAnswer"></div>
           <div class="d_blueAnswer"></div>
         </div>
-        <div class="d_colorBox">
+        <div class="d_colorBox clearfix">
           <div class="d_redExplain"><span></span>让球主胜</div>
           <div class="d_blueExplain"><span></span>让球客胜</div>
         </div>
@@ -61,20 +75,21 @@
     </div>
     <!--胜平负结果-->
     <div class="d_pay_spfBox">
-       <div class="d_pre_info  clearfix">
+      <div class="d_pre_info  clearfix">
         <span class="d_redNum">1.98</span>
         <span class="d_blackShadow">3.35</span>
         <span class="d_blueNum">1.96</span>
       </div>
       <div class="d_payOrShow">
-        <div class="d_payBtn">
+        <div class="d_payBtn{{payInfo.t_spf}}">
           购买胜平负
         </div>
-        <div class="d_showAnswerBox">
-          <div class="d_redAnswer"></div>
-          <div class="d_blueAnswer"></div>
+        <div class="d_showAnswerBox{{payInfo.t_spf}}">
+          <div class="d_redAnswer">80%</div>
+          <div class="d_grayAnswer">20%</div>     
+          <div class="d_blueAnswer">10%</div>
         </div>
-        <div class="d_colorBox">
+        <div class="d_colorBox clearfix">
           <div class="d_redExplain"><span></span>胜</div>
           <div class="d_grayExplain"><span></span>平</div>
           <div class="d_blueExplain"><span></span>负</div>
@@ -83,20 +98,20 @@
     </div>
     <!--大小球结果-->
     <div class="d_pay_dxBox">
-       <div class="d_pre_info  clearfix">
+      <div class="d_pre_info  clearfix">
         <span class="d_redNum">1.98</span>
         <span class="d_greenShadow">2/2.5球</span>
         <span class="d_blueNum">1.96</span>
       </div>
       <div class="d_payOrShow">
-        <div class="d_payBtn">
+        <div class="d_payBtn{{payInfo.t_dx}}">
           购买大小球
         </div>
-        <div class="d_showAnswerBox">
+        <div class="d_showAnswerBox{{payInfo.t_dx}}">
           <div class="d_redAnswer"></div>
           <div class="d_blueAnswer"></div>
         </div>
-        <div class="d_colorBox">
+        <div class="d_colorBox clearfix">
           <div class="d_redExplain"><span></span>大球</div>
           <div class="d_blueExplain"><span></span>小球</div>
         </div>
@@ -105,10 +120,11 @@
   </div>
   <!--副导航-->
   <div class="d_pageTabBox">
-    <ul class="d_pageTab">
-      <li>数据分析</li>
-      <li>欧洲赔率</li>
-      <li>亚洲盘口</li>
+    <ul class="d_pageTab clearfix">
+      <li class="{{nav_w}}"><a href="../watchData.html">数据分析</a></li>
+      <li class="{{nav_e}}"><a href="../europeData.html">欧洲赔率</a></li>
+      <li class="{{nav_a}}"><a href="../asiaData.html">亚洲盘口</a></li>
     </ul>
   </div>
+  </script>
 </div>
